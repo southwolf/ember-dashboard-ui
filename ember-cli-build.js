@@ -1,9 +1,10 @@
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-var options = require('./index.js').options;
+var ChoiceUI = require('./index.js');
 
 module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
-    cssModules: options.cssModules
+    cssModules: ChoiceUI.options.cssModules,
+    nodeAssets: ChoiceUI.options.nodeAssets
   });
 
   return app.toTree();

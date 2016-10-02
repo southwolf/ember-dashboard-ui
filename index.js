@@ -9,6 +9,7 @@ module.exports = {
         require('postcss-import'),
         require('postcss-extend'),
         require('postcss-cssnext'),
+        require('postcss-fallback'),
         require('rucksack-css')({ alias: false, hexRGBA: false, fallbacks: true }),
         require('postcss-browser-reporter')
       ],
@@ -22,6 +23,14 @@ module.exports = {
           'ui-purple': '#5940aa',
           'ui-silver': '#bdc3c7',
           'ui-tomato': '#e74c3c'
+        }
+      }
+    },
+
+    nodeAssets: {
+      ['normalize.css']: {
+        import: {
+          include: [{ path: 'normalize.css', prepend: true }]
         }
       }
     }
