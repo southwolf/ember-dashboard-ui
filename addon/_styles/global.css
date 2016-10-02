@@ -1,0 +1,38 @@
+@value ui-slate from 'ui-colors';
+
+/* Top Level Global Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+:global(body.ember-application > .ember-view) {
+  height: fallback(100vh, 100%);
+}
+
+body {
+  color: ui-slate;
+  font: normal 14px / 20px sans-serif;
+
+  /* Partially Supported Styles */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+}
+
+/* Fonts for Locales */
+html[lang=en-us] > body {
+  font-family: Myriad Set Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+html[lang=zh-cn] > body {
+  font-family: PingFang SC, Helvetica Neue, Helvetica, STHeitiSC-Light, Arial, sans-serif;
+}
+
+/* Reset Common HTML Tags */
+h1, h2, h3, h4, h5, h6, p, blockquote, dl, ol, ul {
+  margin: initial;
+}

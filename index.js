@@ -26,7 +26,6 @@ module.exports = {
         }
       }
     },
-
     nodeAssets: {
       ['normalize.css']: {
         import: {
@@ -34,5 +33,9 @@ module.exports = {
         }
       }
     }
+  },
+
+  isDevelopingAddon() {
+    return 'development' === process.env.EMBER_ENV;
   }
 };
