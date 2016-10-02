@@ -8,9 +8,9 @@ module.exports = {
       plugins: [
         require('postcss-import'),
         require('postcss-extend'),
-        require('postcss-cssnext'),
         require('postcss-fallback'),
         require('rucksack-css')({ alias: false, hexRGBA: false, fallbacks: true }),
+        require('postcss-cssnext'),
         require('postcss-browser-reporter')
       ],
       virtualModules: {

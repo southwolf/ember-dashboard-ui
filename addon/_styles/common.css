@@ -1,3 +1,4 @@
+@import "./extend.css";
 @value ui-slate from 'ui-colors';
 
 /* Top Level Global Styles */
@@ -35,4 +36,9 @@ html[lang=zh-cn] > body {
 /* Reset Common HTML Tags */
 h1, h2, h3, h4, h5, h6, p, blockquote, dl, ol, ul {
   margin: initial;
+}
+
+/* Common Structure Helpers */
+:global(.content-column) {
+  @extend %row;
 }

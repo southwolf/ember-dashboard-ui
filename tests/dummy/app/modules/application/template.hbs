@@ -1,1 +1,28 @@
-<h1>Choice UI</h1>
+{{ui-checkbox
+  name="test"
+  size="middle"
+  label="Test Checkbox"
+  help="Check this have coupons"
+  alert="There some errors happened"
+  checked=isChecked}}
+
+{{ui-radio
+  radioId="gender-male"
+  name="gender"
+  size="middle"
+  label="男"
+  help="Check this have coupons"
+  alert="There some errors happened"
+  value=1
+  groupValue=gender
+  onChange=(action "changeGender")}}
+
+{{ui-radio
+  radioId="gender-remale"
+  name="gender"
+  size="middle"
+  label="女"
+  help="Check this have coupons"
+  value=0
+  groupValue=gender
+  onChange=(action "changeGender")}}
