@@ -26,6 +26,12 @@ export default Component.extend({
   }),
 
   didInsertElement() {
+    this._super(...arguments);
+
+    if ($window.scrollTop() >= scrollOffset) {
+      this.$().addClass('sticky');
+    }
+
     this.boundAutoHideNavigation = this.autoHideNavigation.bind(this);
     $window.on('scroll', this.boundAutoHideNavigation);
   },
