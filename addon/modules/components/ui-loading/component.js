@@ -5,7 +5,6 @@ import inject from 'ember-service/inject';
 import computed, { reads } from 'ember-computed';
 import { htmlSafe } from 'ember-string';
 import get from 'ember-metal/get';
-import set from 'ember-metal/set';
 
 export default Component.extend({
   layout, styles,

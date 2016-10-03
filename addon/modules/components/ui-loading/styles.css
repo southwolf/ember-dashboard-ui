@@ -11,7 +11,7 @@
   position: absolute 0 0 0 0;
   background-color: ui-green;
   will-change: transform;
-  transform: translate3D(0, 0, 0);
+  transform: translate3D(-100%, 0, 0);
   transition: transform .5s cubic-bezier(0.2, 0.8, 0.8, 0.2);
   animation: loading 3s infinite cubic-bezier(0.2, 0.8, 0.8, 0.2);
 

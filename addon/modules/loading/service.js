@@ -1,6 +1,6 @@
 import Service from 'ember-service';
 import set from 'ember-metal/set';
-import { scheduleOnce, later } from 'ember-runloop';
+import { later } from 'ember-runloop';
 
 export default Service.extend({
   loading: false,
