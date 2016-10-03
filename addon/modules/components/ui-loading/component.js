@@ -15,9 +15,16 @@ export default Component.extend({
   loading: reads('loadingService.loading'),
   finish: reads('loadingService.finish'),
 
+  height: 2,
+
   attributeBindings: ['style'],
   style: computed('loading', function() {
-    return htmlSafe(`height: ${get(this, 'loading') ? 2 : 0}px`);
+    return htmlSafe(`height: ${get(this, 'loading') ? get(this, 'height') : 0}px;`);
+  }),
+
+  color: '#2ecc71',
+  progressStyle: computed('color', function() {
+    return htmlSafe(`background-color: ${get(this, 'color')};`)
   }),
 
   progressClassNames: computed('finish', function() {

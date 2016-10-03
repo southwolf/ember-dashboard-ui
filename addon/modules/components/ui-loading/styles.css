@@ -1,5 +1,4 @@
 @value ui-notify from 'ui-zindex';
-@value ui-green from 'ui-colors';
 
 .container {
   position: fixed 0 0 auto 0;
@@ -9,18 +8,14 @@
 
 .progress-bar {
   position: absolute 0 0 0 0;
-  background-color: ui-green;
   will-change: transform;
-  transform: translateX(-100%);
-  animation: loading infinite cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translate3d(-100%, 0, 0);
+  animation: loading infinite cubic-bezier(.77, 0, .175, 1);
   animation-duration: 5s;
-  opacity: 1;
-  transition: opacity 200ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
 
   &.finish {
-    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    animation-duration: 200ms;
-    opacity: 0;
+    animation-duration: .2s;
+    animation-timing-function: cubic-bezier(.95, .05, .795, .035);
   }
 }
 
