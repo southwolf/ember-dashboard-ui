@@ -1,0 +1,19 @@
+@value ui-menu from 'ui-zindex';
+
+.container {
+  position: fixed 0 0 auto;
+  z-index: ui-menu;
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform .5s ease;
+
+  &:global(.sticky) {
+    transform: translateY(-100%);
+  }
+}
+
+.container > nav {
+  clear: fix;
+  position: relative;
+  border-bottom: 1px solid transparent;
+}

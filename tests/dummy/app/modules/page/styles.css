@@ -1,0 +1,27 @@
+@value ui-silver, ui-purple from 'ui-colors';
+
+:global(.ui-navigation > .nav-1st) {
+  color: white;
+  background-color: ui-purple;
+}
+
+:global(.ui-navigation > .nav-2nd) {
+  height: 80px;
+  background-color: white;
+  border-bottom-color: ui-silver;
+}
+
+:global(.sticky > .nav-2nd) {
+  box-shadow: 0 1px 5px 0 color(ui-silver a(50%));
+}
+
+article {
+  width: 60vw;
+  margin: 0 auto;
+  padding-top: calc(60px * 2 + 4em);
+  text-align: justify;
+
+  & > p {
+    margin-bottom: 2em;
+  }
+}

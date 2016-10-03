@@ -23,6 +23,13 @@ module.exports = {
           'ui-purple': '#5940aa',
           'ui-silver': '#bdc3c7',
           'ui-tomato': '#e74c3c'
+        },
+        'ui-zindex': {
+          'ui-notify': 50,
+          'ui-dialog': 40,
+          'ui-curtain': 30,
+          'ui-dropdown': 20,
+          'ui-menu': 10
         }
       }
     },
