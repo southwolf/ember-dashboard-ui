@@ -1,13 +1,21 @@
 import Service from '../../services/loading-slider';
+import { A as EA } from 'ember-array/utils';
 import get from 'ember-metal/get';
 import set from 'ember-metal/set';
 
 export default Service.extend({
+  timers: EA(),
+
   start(duration = 1000) {
-    set(this, '_timer', window.setInterval(this.startLoading.bind(this), duration));
+    this.startLoading();
+    const timer = window.setInterval(this.startLoading.bind(this), duration);
+    return get(this, 'timers').pushObject(timer);
   },
 
   stop(timer) {
-    window.clearInterval(get(this, '_timer'));
+    const timers = get(this, 'timers');
+    if (timers.length) {
+      window.clearInterval(get(this, 'timers').shiftObject());
+    }
   }
 });

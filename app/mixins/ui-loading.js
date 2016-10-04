@@ -7,20 +7,20 @@ export default Mixin.create({
 
   actions: {
     loading() {
-      let loadingSliderService = this.get('loadingSlider');
-      loadingSliderService.startLoading();
+      this._super(...arguments);
+
+      const loadingSliderService = this.get('loadingSlider');
+      loadingSliderService.start();
+
       if (isPresent(this.router)) {
         this.router.one('didTransition', function() {
-          loadingSliderService.endLoading();
+          loadingSliderService.stop();
         });
       }
+
       if (this.get('bubbleLoadingSlider')) {
         return true;
       }
-    },
-
-    finished() {
-      this.get('loadingSlider').endLoading();
     }
   }
 });
