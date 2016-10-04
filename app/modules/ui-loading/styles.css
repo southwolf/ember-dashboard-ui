@@ -1,0 +1,20 @@
+:global(.ui-loading) {
+  position: fixed 0 auto auto 0;
+  z-index: 49;
+  overflow: hidden;
+  height: 2px;
+  width: 100%;
+}
+
+:global(.ui-loading) span {
+  position: inherit;
+  height: 2px;
+  background-color: red;
+}
+
+:global(.ui-loading.expanding) {
+  text-align: center;
+}
+
+:global(.ui-loading.expanding) span {
+}
