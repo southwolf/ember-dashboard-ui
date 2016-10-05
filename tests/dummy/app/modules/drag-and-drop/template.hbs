@@ -1,0 +1,66 @@
+<div local-class="container">
+  {{#ui-droppable
+    action="process"
+    dragOverAction="dragOver"
+    dragOutAction="dragOut"
+  }}
+    <strong>拖拽目标区域</strong>
+  {{/ui-droppable}}
+
+  <h3>简单拖拽</h3>
+
+  {{#ui-draggable
+    content=(readonly person)
+    draggable=true
+    dragStartAction="dragStart"
+    dragMoveAction="dragMove"
+    dragEndAction="dragEnd"}}
+    <strong>{{person.name}} {{person.gender}}</strong>
+  {{/ui-draggable}}
+
+  <h3>手柄拖拽</h3>
+
+  {{#ui-draggable
+    content=(readonly person)
+    dragHandle=".drag-handle"
+    dragStartAction="dragStart"
+    dragMoveAction="dragMove"
+    dragEndAction="dragEnd"}}
+    <span class="drag-handle"></span>
+    <strong>{{person.name}} {{person.gender}}</strong>
+  {{/ui-draggable}}
+
+  <h3>排序拖拽</h3>
+
+  {{#ui-sortable sortableObjectList=people sortEndAction="sortEnd" sortingScope="p1"}}
+    {{#each people as |person|}}
+      {{#ui-draggable
+        content=(readonly person)
+        sortable=true
+        sortingScope="p1"
+        dragStartAction="dragStart"
+        dragMoveAction="dragMove"
+        dragEndAction="dragEnd" as |sortable|}}
+        <strong>{{person.id}} - {{person.name}} {{person.gender}}</strong>
+      {{/ui-draggable}}
+    {{/each}}
+  {{/ui-sortable}}
+
+  <hr>
+
+  {{#ui-sortable sortableObjectList=people sortEndAction="sortEnd" sortingScope="p2"}}
+    {{#each people as |person|}}
+      {{#ui-draggable
+        content=(readonly person)
+        sortable=true
+        sortingScope="p2"
+        dragHandle=".drag-handle"
+        dragStartAction="dragStart"
+        dragMoveAction="dragMove"
+        dragEndAction="dragEnd" as |sortable|}}
+        {{#if sortable}}<small class="drag-handle">【把手】</small>{{/if}}
+        <strong>{{person.id}} - {{person.name}} {{person.gender}}</strong>
+      {{/ui-draggable}}
+    {{/each}}
+  {{/ui-sortable}}
+</div>

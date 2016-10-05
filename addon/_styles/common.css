@@ -43,3 +43,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, dl, ol, ul {
 :global(.content-column) {
   @extend %row;
 }
+
+/* {{ui-draggable}} Cursors */
+:global(.ui-draggable.draggable),
+:global(.ui-draggable .drag-handle) {
+  cursor: fallback(grab, move);
+  &:active {cursor: grabbing}
+}
