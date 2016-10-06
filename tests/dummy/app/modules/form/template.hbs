@@ -277,4 +277,63 @@
       {{/ui-fieldset}}
     {{/ui-fieldset}}
   </div>
+
+  <hr>
+
+  <div class="example">
+    <h2>UI Input Number</h2>
+
+    <h3>单行</h3>
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 小</h3>
+    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 中</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 大</h3>
+    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+  </div>
+
+  <hr>
+
+  <div class="example">
+    <h3>多行</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset size="large" as |f|}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="large" as |f|}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 多列</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset size="large" as |f|}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+        {{f.number subject=person value=person.number min=10 max=100 step=5 label="Change this number" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+  </div>
 </div>

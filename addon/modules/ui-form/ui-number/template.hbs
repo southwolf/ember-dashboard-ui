@@ -1,0 +1,24 @@
+<div local-class="wrapper">
+  <label for={{fieldId}} local-class="label">{{label}}</label>
+  {{input type="number" local-class="number-input"
+    disabled=disabled
+    form=form
+    id=fieldId
+    min=min
+    max=max
+    name=name
+    required=required
+    step=step
+    tabindex=tabindex
+    value=value}}
+  <span local-class="number-action increase" onclick={{action "increase"}}>
+    <i class="ic dark ic-plus-1"></i>
+  </span>
+  <span local-class="number-action decrease" onclick={{action "decrease"}}>
+    <i class="ic dark ic-minus-1"></i>
+  </span>
+</div>
+
+{{#if subject.error}}
+  <div class="alert">{{subject.error}}</div>
+{{/if}}

@@ -6,6 +6,7 @@ export default Controller.extend({
   person: O.create({
     name: 'Albert Yu',
     gender: 1,
+    number: 54,
     alive: true,
     online: true,
     error: 'Something wrong has happened'

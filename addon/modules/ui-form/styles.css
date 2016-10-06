@@ -301,3 +301,34 @@ label.label {
   width: 100%;
   margin-bottom: 12px;
 }
+
+.wrapper {
+  @extend %wrapper;
+}
+
+.number-input {
+  width: 100%;
+  min-width: 120px;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+.number-action {
+  position: absolute;
+  bottom: 1px;
+  width: 36px;
+  height: 36px;
+  background-color: ui-silver;
+
+  &.increase {
+    right: 1px;
+  }
+
+  &.decrease {
+    left: 1px;
+  }
+}
+
+:global(.disabled) .number-action {
+  cursor: not-allowed;
+}
