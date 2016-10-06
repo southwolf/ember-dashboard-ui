@@ -14,3 +14,7 @@
 bower.json
 ember-cli-build.js
 testem.js
+**/.eslintrc.js
+.vscodeignore
+jsconfig.json
+/typings

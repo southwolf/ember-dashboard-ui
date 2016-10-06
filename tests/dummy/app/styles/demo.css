@@ -1,0 +1,27 @@
+@value ui-purple, ui-silver from 'ui-colors';
+
+:global(body) {
+  background-color: color(ui-purple a(85%));
+}
+
+:global(.container) {
+  clear: fix;
+  max-width: 940px;
+  margin: 0 auto;
+  border: 1px solid ui-silver;
+  background-color: white;
+}
+
+:global(.example) {
+  padding: 32px 24px;
+
+  & h2 {
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid ui-silver;
+  }
+
+  & h3 {
+    margin-bottom: 12px;
+  }
+}

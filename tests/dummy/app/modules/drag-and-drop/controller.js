@@ -1,3 +1,5 @@
+/* eslint-diable no-console */
+
 import Controller from 'ember-controller';
 import { A } from 'ember-array/utils';
 
@@ -19,7 +21,7 @@ export default Controller.extend({
     },
 
     dragStart(content, event) {
-      console.log('start: ', content);
+      console.log('start: ', content, event);
     },
 
     dragMove(event) {
@@ -35,7 +37,7 @@ export default Controller.extend({
     },
 
     dragEnd(content, event) {
-      console.log('end: ', content);
+      console.log('end: ', content, evnet);
     },
 
     sortEnd(event) {
@@ -43,3 +45,5 @@ export default Controller.extend({
     }
   }
 });
+
+/* eslint-diable no-console */

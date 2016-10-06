@@ -1,10 +1,10 @@
 import Service from '../../services/loading-slider';
-import { A as EA } from 'ember-array/utils';
+import { A } from 'ember-array/utils';
 import get from 'ember-metal/get';
 import set from 'ember-metal/set';
 
 export default Service.extend({
-  timers: EA(),
+  timers: A(),
 
   start(duration = 1000) {
     this.startLoading();

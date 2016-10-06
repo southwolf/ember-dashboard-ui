@@ -1,28 +1,182 @@
-{{ui-checkbox
-  name="test"
-  size="middle"
-  label="Test Checkbox"
-  help="Check this have coupons"
-  alert="There some errors happened"
-  checked=isChecked}}
+<div class="container">
+  <div class="example">
+    <h2>UI Checkbox</h2>
 
-{{ui-radio
-  radioId="gender-male"
-  name="gender"
-  size="middle"
-  label="男"
-  help="Check this have coupons"
-  alert="There some errors happened"
-  value=1
-  groupValue=gender
-  onChange=(action "changeGender")}}
+    <h3>单行</h3>
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
 
-{{ui-radio
-  radioId="gender-remale"
-  name="gender"
-  size="middle"
-  label="女"
-  help="Check this have coupons"
-  value=0
-  groupValue=gender
-  onChange=(action "changeGender")}}
+    <h3>单行 小</h3>
+    {{#ui-fieldset size="small" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 中</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 中上</h3>
+    {{#ui-fieldset size="middle-upper" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 大</h3>
+    {{#ui-fieldset size="large" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+  </div>
+
+  <hr>
+
+  <div class="example">
+    <h3>多行 独立</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{#ui-fieldset}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 独立 小</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{#ui-fieldset size="small"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="small"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="small"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 独立 中</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 独立 大</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{#ui-fieldset size="large"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="large"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="large"}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+  </div>
+
+  <hr>
+
+  <div class="example">
+    <h3>多行 双排</h3>
+    {{#ui-fieldset split="double" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>多行 三排</h3>
+    {{#ui-fieldset split="triple" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>多行 嵌套</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online false true)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online false true)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+  </div>
+
+  <hr>
+
+  <div class="example">
+    <h2>UI Radio</h2>
+
+    <h3>多行 独立</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{#ui-fieldset size="large"}}
+        {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="large"}}
+        {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 独立</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{#ui-fieldset size="large"}}
+        {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="large"}}
+        {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="large"}}
+        {{f.radio subject=person value=2 currentValue=person.gender name="gender" label="人妖" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 嵌套</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+        {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+        {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+        {{f.radio subject=person value=2 currentValue=person.gender name="gender" label="人妖" disabled=(unless person.online false true) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+  </div>
+</div>

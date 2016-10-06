@@ -1,0 +1,8 @@
+<div class={{wrapperClassNames}}>
+  {{yield (hash
+    checkbox=(component 'ui-checkbox' hasSplit=hasSplit)
+    radio=(component 'ui-radio' hasSplit=hasSplit)
+    )}}
+</div>
+
+{{#if help}}<div class="help">{{{help}}}</div>{{/if}}
