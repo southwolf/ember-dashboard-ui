@@ -1,0 +1,14 @@
+<label for={{fieldId}} local-class="label">{{label}}</label>
+{{input
+  autofocus=autofocus
+  disabled=disabled
+  form=form
+  id=fieldId
+  name=name
+  placeholder=placeholder
+  required=required
+  tabindex=tabindex
+  value=value}}
+{{#if subject.error}}
+  <div class="alert">{{subject.error}}</div>
+{{/if}}

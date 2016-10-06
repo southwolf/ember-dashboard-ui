@@ -95,13 +95,13 @@
   <hr>
 
   <div class="example">
-    <h3>多行 双排</h3>
+    <h3>多行 双列</h3>
     {{#ui-fieldset split="double" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
     {{/ui-fieldset}}
 
-    <h3>多行 三排</h3>
+    <h3>多行 三列</h3>
     {{#ui-fieldset split="triple" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
@@ -176,6 +176,104 @@
         {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
         {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
         {{f.radio subject=person value=2 currentValue=person.gender name="gender" label="人妖" disabled=(unless person.online false true) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+  </div>
+
+  <hr>
+
+  <div class="example">
+    <h2>UI Input</h2>
+
+    <h3>单行</h3>
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 小</h3>
+    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 中</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false) required=true}}
+    {{/ui-fieldset}}
+
+    <h3>单行 中上</h3>
+    {{#ui-fieldset size="middle-upper" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+    {{/ui-fieldset}}
+
+    <h3>单行 大</h3>
+    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online false true) placeholder="This is a placeholder"}}
+    {{/ui-fieldset}}
+  </div>
+
+  <hr>
+
+  <div class="example">
+    <h3>多行 独立</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 双列</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 三列</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online false true)}}
+      {{/ui-fieldset}}
+    {{/ui-fieldset}}
+
+    <h3>多行 混合</h3>
+    {{#ui-fieldset size="middle" help="<strong>This is something can helps you out.</strong>"}}
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+        {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+        {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" disabled=(unless person.online true false) onChange=(action 'changeGender')}}
+        {{f.radio subject=person value=2 currentValue=person.gender name="gender" label="人妖" disabled=(unless person.online false true) onChange=(action 'changeGender')}}
+      {{/ui-fieldset}}
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+        {{f.input subject=person value=person.name name="name" label="Username" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="double" as |f|}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+      {{/ui-fieldset}}
+
+      {{#ui-fieldset split="triple" as |f|}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online true false)}}
+        {{f.checkbox subject=person checked=person.alive name="e1" label="This is label" disabled=(unless person.online false true)}}
       {{/ui-fieldset}}
     {{/ui-fieldset}}
   </div>

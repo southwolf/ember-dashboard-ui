@@ -203,15 +203,26 @@ form {
   @media (max-width: 767px) {
     flex-basis: 100% !important;
     border: none;
-    margin: 12px 0 0 0;
+    margin: 6px 0 0 0;
     padding: 0;
   }
 }
 
+@media (max-width: 991px) {
+  :global(.middle-upper + .help),
+  :global(.small + .help) {
+    margin-top: 6px;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
 :global(.large + .help) {
+  margin-top: 6px;
   margin-left: 0;
   padding-left: 0;
-  border: none;
+  border-left: none;
 }
 
 :global(.app-input .help) {
@@ -283,4 +294,10 @@ label.checkbox, label.radio {
   & svg {
     position: absolute 0 auto auto 0;
   }
+}
+
+label.label {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 12px;
 }
