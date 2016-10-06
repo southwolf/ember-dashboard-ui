@@ -12,5 +12,9 @@ export default Component.extend(UIFormWrapperMixin, {
 
   checked: computed('currentValue', function() {
     return get(this, 'value') == get(this, 'currentValue');
+  }),
+
+  checkedClassName: computed('checked', function() {
+    return get(this, 'checked') ? 'checked' : 'unchecked';
   })
 });

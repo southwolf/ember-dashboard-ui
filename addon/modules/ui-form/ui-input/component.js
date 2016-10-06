@@ -6,8 +6,5 @@ import styles from '../styles';
 export default Component.extend(UIFormWrapperMixin, {
   layout,
   styles,
-  tagName: '',
-
-  // override mixin
-  checkedClassName: null
+  tagName: ''
 });
