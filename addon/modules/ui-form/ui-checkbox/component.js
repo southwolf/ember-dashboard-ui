@@ -1,16 +1,29 @@
 import Component from 'ember-component';
-import UIFormWrapperMixin from '../../../mixins/ui-form-wrapper';
 import layout from './template';
-import styles from '../styles';
 import computed from 'ember-computed';
 import get from 'ember-metal/get';
+import { isPresent } from 'ember-utils';
+import { htmlSafe } from 'ember-string';
 
-export default Component.extend(UIFormWrapperMixin, {
+export default Component.extend({
   layout,
-  styles,
-  tagName: '',
+  classNames: ['ui-checkbox'],
 
-  checkedClassName: computed('checked', function() {
+  checkedClass: computed('checked', function() {
     return get(this, 'checked') ? 'checked' : 'unchecked';
   }),
+
+  errorContent: computed('subject.error', function() {
+    const error = get(this, 'subject.error');
+    if (isPresent(error)) {
+      return htmlSafe(`<div class="field-error">${error}</div>`)
+    }
+  }),
+
+  didInsertElement() {
+    const input = this.element.querySelector('input');
+    const label = this.element.querySelector('label');
+    label.setAttribute('for', input.id);
+    this.element.parentElement.classList.add('has-label');
+  }
 });

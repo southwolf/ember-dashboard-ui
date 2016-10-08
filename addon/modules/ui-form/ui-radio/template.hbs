@@ -11,8 +11,8 @@
   currentValue=currentValue
   onChange=onChange}}
 
-<label local-class="radio" for={{fieldId}}>
-  <svg class={{checkedClassName}} width="20px" height="20px" viewBox="0 0 40 40">
+<label>
+  <svg class={{checkedClass}} width="20px" height="20px" viewBox="0 0 40 40">
     {{#unless checked}}
       <path d="M20,6c7.7,0,14,6.3,14,14s-6.3,14-14,14S6,27.7,6,20S12.3,6,20,6 M20,4C11.2,4,4,11.2,4,20c0,8.8,7.2,16,16,16s16-7.2,16-16 C36,11.2,28.8,4,20,4L20,4z"/>
     {{else}}
@@ -23,6 +23,4 @@
   {{#if hasBlock}} {{yield}} {{else}} {{label}} {{/if}}
 </label>
 
-{{#if subject.error}}
-  <div class="alert">{{subject.error}}</div>
-{{/if}}
+{{errorContent}}

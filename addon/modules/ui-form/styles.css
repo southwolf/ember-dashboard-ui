@@ -37,6 +37,7 @@ input {
 
   & label {
     position: relative;
+    cursor: pointer;
   }
 
   & input {
@@ -60,4 +61,11 @@ input {
 
 :global(.ui-input) {
   flex-grow: 1;
+}
+
+:global(.ui-checkbox),
+:global(.ui-radio) {
+  & input {
+    display: none;
+  }
 }
