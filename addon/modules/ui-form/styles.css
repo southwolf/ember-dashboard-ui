@@ -1,5 +1,10 @@
 @value ui-gray, ui-purple, ui-silver, ui-tomato from 'ui-colors';
 
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
 input {
   padding: 0;
   border: 1px solid ui-silver;
@@ -35,6 +40,10 @@ input {
     flex-basis: 100%;
   }
 
+  & > div {
+    flex-grow: 1;
+  }
+
   & label {
     position: relative;
     cursor: pointer;
@@ -60,7 +69,34 @@ input {
 }
 
 :global(.ui-input) {
-  flex-grow: 1;
+
+}
+
+:global(.ui-number) {
+  & :global(.inner-wrapper) {
+    position: relative;
+
+    & > [type=number] {
+      text-align: center;
+    }
+
+    & > :global(.increase),
+    & > :global(.decrease) {
+      position: absolute;
+      top: 1px;
+      width: 20px;
+      height: 20px;
+      background-color: ui-gray;
+    }
+
+    & > :global(.increase) {
+      right: 1px;
+    }
+
+    & > :global(.decrease) {
+      left: 1px;
+    }
+  }
 }
 
 :global(.ui-checkbox),

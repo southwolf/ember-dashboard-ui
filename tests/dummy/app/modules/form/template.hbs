@@ -162,4 +162,60 @@
       {{f.radio subject=person value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
   </div>
+
+  <div class="example">
+    <h2>UI Number</h2>
+
+    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+  </div>
 </div>
