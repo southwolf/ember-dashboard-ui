@@ -37,7 +37,7 @@ export default Controller.extend({
     },
 
     dragEnd(content, event) {
-      console.log('end: ', content, evnet);
+      console.log('end: ', content, event);
     },
 
     sortEnd(event) {

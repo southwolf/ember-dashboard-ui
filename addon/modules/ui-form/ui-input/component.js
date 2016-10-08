@@ -1,20 +1,38 @@
 import Component from 'ember-component';
-import UIFormWrapperMixin from '../../../mixins/ui-form-wrapper';
 import layout from './template';
-import styles from '../styles';
+import computed from 'ember-computed';
 import get from 'ember-metal/get';
+import { isPresent } from 'ember-utils';
+import { htmlSafe } from 'ember-string';
 
-export default Component.extend(UIFormWrapperMixin, {
+export default Component.extend({
   layout,
-  styles,
-  tagName: '',
+  classNames: ['ui-input'],
+
+  hasLabel: computed('label', function() {
+    return isPresent(get(this, 'label'));
+  }),
+
+  labelContent: computed('hasLabel', function() {
+    const label = get(this, 'label');
+    if (get(this, 'hasLabel')) {
+      return htmlSafe(`<label>${label}</label>`);
+    } else return '';
+  }),
+
+  errorContent: computed('subject.error', function() {
+    const error = get(this, 'subject.error');
+    if (isPresent(error)) {
+      return htmlSafe(`<div class="field-error">${error}</div>`)
+    }
+  }),
 
   didInsertElement() {
-    if (!get(this, 'hasSplit')) {
-      if (get(this, 'label')) {
-        const input = document.getElementById(this.fieldId);
-        input.parentNode.classList.add('has-label');
-      }
+    if (get(this, 'hasLabel')) {
+      const input = this.element.querySelector('input');
+      const label = this.element.querySelector('label');
+      label.setAttribute('for', input.id);
+      this.element.parentElement.classList.add('has-label');
     }
   }
 });

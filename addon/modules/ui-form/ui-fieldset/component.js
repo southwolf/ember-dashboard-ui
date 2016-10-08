@@ -2,37 +2,25 @@ import Component from 'ember-component';
 import layout from './template'
 import computed from 'ember-computed';
 import get from 'ember-metal/get';
-import set from 'ember-metal/set';
+import { htmlSafe } from 'ember-string';
 import { isPresent } from 'ember-utils';
 
 export default Component.extend({
   layout,
-  classNames: ['content-column'],
+  classNames: ['ui-fieldset'],
 
-  sizeClassName: computed('size', function() {
-    return this.getWithDefault('size', '');
+  sizeClass: computed('size', function() {
+    return ` ${this.getWithDefault('size', 'middle')}`;
   }),
 
-  hasSplit: computed('split', function() {
-    return isPresent(get(this, 'split'));
+  directionClass: computed('size', function() {
+    return ` ${this.getWithDefault('direction', 'column')}`;
   }),
 
-  splitClassName: computed('split', function() {
-    return get(this, 'hasSplit') ? ` ${get(this, 'split')} column-wrapper` : '';
-  }),
-
-  modifierClassName: computed('sizeClassName', 'splitClassName', function() {
-    return `${get(this, 'sizeClassName') + get(this, 'splitClassName')}`;
-  }),
-
-  init() {
-    if (get(this, 'inside')) {
-      set(this, 'tagName', '');
-
-      const originModifier = get(this, 'modifierClassName');
-      set(this, 'modifierClassName', `inner${originModifier}`);
-    }
-
-    this._super(...arguments);
-  }
+  helpContent: computed('help', function() {
+    const help = get(this, 'help');
+    if (isPresent(help)) {
+      return htmlSafe(`<div class="field-help">${get(this, 'help')}</div>`);
+    } else return '';
+  })
 });

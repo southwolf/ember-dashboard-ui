@@ -1,4 +1,4 @@
-<div class={{modifierClassName}}>
+<div class="field-control{{sizeClass}}{{directionClass}}">
   {{yield (hash
     fieldset=(component 'ui-fieldset' inside=true)
     checkbox=(component 'ui-checkbox' hasSplit=hasSplit)
@@ -7,5 +7,4 @@
     radio=(component 'ui-radio' hasSplit=hasSplit)
     )}}
 </div>
-
-{{#if help}}<div class="help">{{{help}}}</div>{{/if}}
+{{helpContent}}
