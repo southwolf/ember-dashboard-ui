@@ -1,4 +1,7 @@
-<label for={{fieldId}} local-class="label">{{label}}</label>
+{{#if label}}
+  <label for={{fieldId}} local-class="label">{{label}}</label>
+{{/if}}
+
 {{input
   autofocus=autofocus
   disabled=disabled
@@ -9,6 +12,7 @@
   required=required
   tabindex=tabindex
   value=value}}
+
 {{#if subject.error}}
   <div class="alert">{{subject.error}}</div>
 {{/if}}

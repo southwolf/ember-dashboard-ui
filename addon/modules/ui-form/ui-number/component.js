@@ -27,6 +27,15 @@ export default Component.extend(UIFormWrapperMixin, {
     return get(this, 'value') % get(this, 'step') === 0;
   }),
 
+  didInsertElement() {
+    if (!get(this, 'hasSplit')) {
+      if (get(this, 'label')) {
+        const input = document.getElementById(this.fieldId);
+        input.parentNode.classList.add('has-label');
+      }
+    }
+  },
+
   actions: {
     increase() {
       if (get(this, 'hasDisabled')) return;

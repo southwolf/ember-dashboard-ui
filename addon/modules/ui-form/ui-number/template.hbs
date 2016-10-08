@@ -1,5 +1,8 @@
 <div local-class="wrapper">
-  <label for={{fieldId}} local-class="label">{{label}}</label>
+  {{#if label}}
+    <label for={{fieldId}} local-class="label">{{label}}</label>
+  {{/if}}
+
   {{input type="number" local-class="number-input"
     disabled=disabled
     form=form

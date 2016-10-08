@@ -1,5 +1,6 @@
-<div class={{wrapperClassNames}}>
+<div class={{modifierClassName}}>
   {{yield (hash
+    fieldset=(component 'ui-fieldset' inside=true)
     checkbox=(component 'ui-checkbox' hasSplit=hasSplit)
     input=(component 'ui-input' hasSplit=hasSplit)
     number=(component 'ui-number' hasSplit=hasSplit)

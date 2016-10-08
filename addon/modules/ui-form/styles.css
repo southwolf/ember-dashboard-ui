@@ -90,15 +90,14 @@ form {
   @extend %column;
 }
 
-:global(.column-wrapper > span),
-:global(.column-wrapper .split-wrapper > span) {
-  display: block;
-  margin-bottom: 12px;
-}
+/* :global(.column-wrapper > span), */
+/* :global(.column-wrapper .split-wrapper > span) { */
+/*   display: block; */
+/*   margin-bottom: 12px; */
+/* } */
 
 :global(.column-wrapper.double),
 :global(.column-wrapper.triple) {
-  width: 55%;
   flex-flow: row wrap;
   justify-content: space-between;
 
@@ -107,13 +106,9 @@ form {
   }
 }
 
-:global(.column-wrapper.middle .column-wrapper.double),
-:global(.column-wrapper.middle .column-wrapper.triple) {
+:global(.middle .column-wrapper.double),
+:global(.middle .column-wrapper.triple) {
   width: 100%;
-}
-
-:global(.split-wrapper) {
-  position: relative;
 }
 
 :global(.double .split-wrapper) {
@@ -148,26 +143,24 @@ form {
   }
 }
 
-:global(.column-wrapper.large) {
+:global(.content-column > .large) {
   width: 100%;
+
+  & > input[type=text],
+  & > input[type=number] {
+    width: 100%;
+  }
 }
 
-:global(.column-wrapper.middle) {
+:global(.content-column > .middle) {
   width: 55%;
 
   @media (max-width: 767px) {
     width: 100%;
   }
 
-  & + :global(.help) {
-    flex-basis: 39%;
-  }
-}
-
-:global(.column-wrapper.middle-upper) {
-  width: 55%;
-
-  @media (max-width: 991px) {
+  & > input[type=text],
+  & > input[type=number] {
     width: 100%;
   }
 
@@ -176,7 +169,24 @@ form {
   }
 }
 
-:global(.column-wrapper.small) {
+:global(.content-column > .middle-upper) {
+  width: 55%;
+
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+
+  & > input[type=text],
+  & > input[type=number] {
+    width: 100%;
+  }
+
+  & + :global(.help) {
+    flex-basis: 39%;
+  }
+}
+
+:global(.content-column > .small) {
   width: 25%;
 
   @media (max-width: 991px) {
@@ -187,8 +197,23 @@ form {
     width: 100%;
   }
 
+  & > input[type=text],
+  & > input[type=number] {
+    width: 100%;
+  }
+
   & + :global(.help) {
     flex-basis: 69%;
+  }
+}
+
+:global(.content-column .inner) {
+  @extend %wrapper;
+  margin-bottom: 12px;
+
+  & > input[type=text],
+  & > input[type=number] {
+    width: 100%;
   }
 }
 
@@ -206,6 +231,10 @@ form {
     margin: 6px 0 0 0;
     padding: 0;
   }
+}
+
+:global(.has-label + .help) {
+  margin-top: 32px;
 }
 
 @media (max-width: 991px) {
@@ -285,21 +314,25 @@ input[type=checkbox] {
 }
 
 /* local classes */
+label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+label.label {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
 label.checkbox, label.radio {
   height: 20px;
   padding-left: 32px;
-  cursor: pointer;
-  user-select: none;
 
   & svg {
     position: absolute 0 auto auto 0;
   }
-}
-
-label.label {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 12px;
 }
 
 .wrapper {
