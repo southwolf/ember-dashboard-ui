@@ -2,7 +2,7 @@
   <div class="example test">
     <h2>UI Input</h2>
 
-    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Small" value=person.name readonly=true}}
     {{/ui-fieldset}}
 
@@ -10,15 +10,15 @@
       {{f.input subject=person name="name" label="Middle" value=person.name disabled=true}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="middle-upper" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Small" value=person.name}}
       {{f.input subject=person name="name" label="Small" value=person.name}}
     {{/ui-fieldset}}
@@ -28,12 +28,12 @@
       {{f.input subject=person name="name" label="Middle" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="middle-upper" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
       {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
     {{/ui-fieldset}}
@@ -43,18 +43,18 @@
       {{f.input subject=person name="name" label="Middle" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="middle-upper" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
       {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
       {{f.input subject=person name="name" label="Label" value=person.name}}
@@ -65,35 +65,33 @@
   <div class="example">
     <h2>UI Checkbox</h2>
 
-    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is Small"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is Middle"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is Middle Upper"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
-    {{/ui-fieldset}}
-
-    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
-    {{/ui-fieldset}}
-
-    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
-    {{/ui-fieldset}}
-
-    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
-    {{/ui-fieldset}}
-
-    {{#ui-fieldset direction="row" size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
     {{/ui-fieldset}}
@@ -101,16 +99,21 @@
     {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
       {{f.checkbox subject=person checked=person.alive name="e1" label="This is label"}}
@@ -121,7 +124,7 @@
   <div class="example">
     <h2>UI Checkbox</h2>
 
-    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
@@ -131,12 +134,12 @@
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
@@ -146,12 +149,12 @@
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
@@ -163,7 +166,7 @@
       {{f.radio subject=person value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
       {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
       {{f.radio subject=person value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
@@ -171,58 +174,58 @@
   </div>
 
   <div class="example">
-    <h2>UI Number</h2>
+    <h2>UI spinner</h2>
 
-    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label" readonly=true}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label" disabled=true}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.number subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
   </div>
 </div>

@@ -9,13 +9,7 @@
 }
 
 :global(textarea),
-:global(input[type='text']),
-:global(input[type='number']),
-:global(input[type='Password']),
-:global(input[type='email']),
-:global(input[type='tel']),
-:global(input[type='date']),
-:global(input[type='datetime']) {
+:global(input) {
   line-height: inherit;
   padding: 7px 12px;
   background-color: ui-white;
@@ -39,14 +33,8 @@
   }
 }
 
-:global(input[type='text']:disabled),
-:global(input[type='number']:disabled),
-:global(input[type='Password']:disabled),
-:global(input[type='email']:disabled),
-:global(input[type='tel']:disabled),
-:global(input[type='date']:disabled),
-:global(input[type='datetime']:disabled),
-:global(textarea[name='address']:disabled) {
+:global(textarea:disabled),
+:global(input:disabled) {
   cursor: not-allowed;
   color: ui-gray;
   background-color: color(ui-silver a(16%));
@@ -61,14 +49,8 @@
   }
 }
 
-:global(input[type='text']:read-only),
-:global(input[type='number']:read-only),
-:global(input[type='Password']:read-only),
-:global(input[type='email']:read-only),
-:global(input[type='tel']:read-only),
-:global(input[type='date']:read-only),
-:global(input[type='datetime']:read-only),
-:global(textarea[name='address']:read-only) {
+:global(textarea:read-only),
+:global(input:read-only) {
   &:hover {
     outline: none;
     box-shadow: inset ui-light 0 0 0 2px;
@@ -80,7 +62,6 @@
     box-shadow: inset color(ui-gray a(15%)) 0 0 0 2px;
   }
 }
-
 
 :global(.ui-fieldset) {
   display: flex;
@@ -101,13 +82,21 @@
         margin-right: 0;
       }
     }
+
+    @media (--mobile) {
+      flex-direction: column;
+
+      & > div {
+        margin-right: 0;
+      }
+    }
   }
 
   &:global(.column) {
     flex-direction: column;
   }
 
-  &:global(.small) {
+  &:global(.s) {
     flex-basis: 25%;
 
     @media (--tablet) {
@@ -119,7 +108,7 @@
     }
   }
 
-  &:global(.middle) {
+  &:global(.m) {
     flex-basis: 55%;
 
     @media (--mobile) {
@@ -127,7 +116,7 @@
     }
   }
 
-  &:global(.middle-upper) {
+  &:global(.l) {
     flex-basis: 55%;
 
     @media (--below-laptop) {
@@ -135,7 +124,7 @@
     }
   }
 
-  &:global(.large) {
+  &:global(.xl) {
     flex-basis: 100%;
   }
 
@@ -148,21 +137,23 @@
     display: inline-block;
     cursor: pointer;
     margin-top: margin-m;
+    user-select: none;
   }
 
   & input {
     position: relative;
     width: 100%;
-    margin-top: margin-m;
   }
 }
 
 :global(.field-help) {
+  position: relative;
   flex-grow: 1;
+  color: ui-gray;
 }
 
-:global(.field-control.small + .field-help),
-:global(.field-control.middle + .field-help) {
+:global(.field-control.s + .field-help),
+:global(.field-control.m + .field-help) {
   @media (--tablet) {
     flex-basis: 40%;
   }
@@ -175,31 +166,25 @@
     border: none;
   }
 }
-:global(.field-control.middle-upper + .field-help) {
+
+:global(.field-control.l + .field-help) {
   @media (--below-laptop) {
     flex-basis: 100%;
     margin-left: 0;
-    margin-top: margin-m;
     padding-left: 0;
     border: none;
   }
 }
 
-
-:global(.small + .field-help),
-:global(.middle + .field-help),
-:global(.middle-upper + .field-help) {
+:global(.s + .field-help),
+:global(.m + .field-help),
+:global(.l + .field-help) {
   margin-left: 2.5%;
   padding-left: 2.5%;
   border-left: 1px solid ui-silver;
 }
 
-:global(.has-label + .field-help),
-:global(.has-label + .field-help) {
-  margin-top: 44px;
-}
-
-:global(.field-control.large + .field-help) {
+:global(.field-control.xl + .field-help) {
   margin-top: margin-m;
 }
 
@@ -212,12 +197,26 @@
 }
 
 :global(.ui-input) {
-
+  & input {
+    margin-top: margin-m;
+  }
 }
 
-:global(.ui-number) {
+:global(.field-control.l.ui-input + .field-help) {
+  @media (--below-laptop) {
+    margin-top: margin-m;
+  }
+}
+
+:global(.has-label + .field-help),
+:global(.has-label + .field-help) {
+  margin-top: 44px;
+}
+
+:global(.ui-spinner) {
   & :global(.inner-wrapper) {
     position: relative;
+    margin-top: margin-m;
 
     & > [type=number] {
       text-align: center;
@@ -225,11 +224,17 @@
 
     & > :global(.increase),
     & > :global(.decrease) {
+      cursor: pointer;
       position: absolute;
       top: 1px;
-      width: 20px;
-      height: 20px;
-      background-color: ui-gray;
+      width: 34px;
+      height: 34px;
+
+      &:hover {
+        & svg {
+          fill: ui-dark-slate;
+        }
+      }
     }
 
     & > :global(.increase) {
@@ -239,12 +244,84 @@
     & > :global(.decrease) {
       left: 1px;
     }
+
+    & svg {
+      fill: ui-gray;
+      transition: fill 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    & :disabled {
+      & ~ a {
+        pointer-events: none;
+      }
+    }
   }
 }
 
 :global(.ui-checkbox),
 :global(.ui-radio) {
+  & > div {
+    margin-top: margin-m;
+  }
+
   & input {
     display: none;
+  }
+
+  & svg {
+    display: inline-block;
+    vertical-align: bottom;
+
+    & > path {
+      transition: fill 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+}
+
+:global(.checked-svg) {
+  fill: ui-purple;
+}
+
+:global(.unchecked-svg) {
+  fill: ui-silver;
+}
+
+:global(.s.ui-radio + .field-help),
+:global(.m.ui-radio + .field-help),
+:global(.l.ui-radio + .field-help),
+:global(.s.ui-checkbox + .field-help),
+:global(.m.ui-checkbox + .field-help),
+:global(.l.ui-checkbox + .field-help) {
+  margin-top: margin-l;
+}
+
+:global(.l.ui-radio + .field-help),
+:global(.l.ui-checkbox + .field-help) {
+  @media (--below-laptop) {
+    margin-top: margin-m;
+  }
+}
+
+:global(.s.ui-radio + .field-help),
+:global(.s.ui-checkbox + .field-help),
+:global(.m.ui-radio + .field-help),
+:global(.m.ui-checkbox + .field-help) {
+  @media (--mobile) {
+    margin-top: margin-m;
+  }
+}
+
+:global(.ui-radio),
+:global(.ui-checkbox) {
+  & label {
+    &:hover {
+      & :global(.checked-svg) {
+        fill: color(ui-purple s(24%));
+      }
+
+      & :global(.unchecked-svg) {
+        fill: ui-gray;
+      }
+    }
   }
 }

@@ -35,7 +35,7 @@ export default Component.extend({
       const input = this.element.querySelector('input');
       const label = this.element.querySelector('label');
       label.setAttribute('for', input.id);
-      this.element.parentElement.classList.add('ui-number', 'has-label');
+      this.element.parentElement.classList.add('ui-spinner', 'has-label');
     }
   },
 
