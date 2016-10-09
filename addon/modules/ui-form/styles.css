@@ -83,7 +83,7 @@
       }
     }
 
-    @media (--mobile) {
+    @media (max-width: 479px) {
       flex-direction: column;
 
       & > div {
@@ -99,11 +99,11 @@
   &:global(.s) {
     flex-basis: 25%;
 
-    @media (--tablet) {
+    @media (max-width: 767px) {
       flex-basis: 55%;
     }
 
-    @media (--mobile) {
+    @media (max-width: 479px) {
       flex-basis: 100%;
     }
   }
@@ -111,7 +111,7 @@
   &:global(.m) {
     flex-basis: 55%;
 
-    @media (--mobile) {
+    @media (max-width: 479px) {
       flex-basis: 100%;
     }
   }
@@ -119,7 +119,7 @@
   &:global(.l) {
     flex-basis: 55%;
 
-    @media (--below-laptop) {
+    @media (max-width: 767px) {
       flex-basis: 100%;
     }
   }
@@ -153,55 +153,9 @@
   color: ui-tomato;
   background-color: color(ui-tomato a(20%));
 
-  @media (--mobile) {
+  @media (max-width: 479px) {
     font-size: 12px;
   }
-}
-
-:global(.field-help) {
-  position: relative;
-  flex-grow: 1;
-  color: ui-gray;
-
-  @media (--mobile) {
-    font-size: 12px;
-  }
-}
-
-:global(.field-control.s + .field-help),
-:global(.field-control.m + .field-help) {
-  @media (--tablet) {
-    flex-basis: 40%;
-  }
-
-  @media (--mobile) {
-    flex-basis: 100%;
-    margin-left: 0;
-    margin-top: margin-m;
-    padding-left: 0;
-    border: none;
-  }
-}
-
-:global(.field-control.l + .field-help) {
-  @media (--below-laptop) {
-    flex-basis: 100%;
-    margin-left: 0;
-    padding-left: 0;
-    border: none;
-  }
-}
-
-:global(.s + .field-help),
-:global(.m + .field-help),
-:global(.l + .field-help) {
-  margin-left: 2.5%;
-  padding-left: 2.5%;
-  border-left: 1px solid ui-silver;
-}
-
-:global(.field-control.xl + .field-help) {
-  margin-top: margin-m;
 }
 
 :global(.ui-input) {
@@ -210,22 +164,78 @@
   }
 }
 
-:global(.s.ui-input + .field-help),
-:global(.m.ui-input + .field-help),
-:global(.l.ui-input + .field-help) {
-  margin-top: margin-m;
-}
+:global(.field-help) {
+  position: relative;
+  line-height: normal;
+  flex-grow: 1;
+  color: ui-gray;
 
-:global(.s.ui-input.has-label + .field-help),
-:global(.m.ui-input.has-label + .field-help),
-:global(.l.ui-input.has-label + .field-help) {
-  margin-top: 44px;
-}
-
-:global(.field-control.l.ui-input + .field-help) {
-  @media (--below-laptop) {
-    margin-top: margin-m;
+  @media (max-width: 479px) {
+    font-size: 12px;
   }
+}
+
+:global(.s + .field-help) {
+  flex-basis: 70%;
+
+  @media (max-width: 767px) {
+    flex-basis: 40%;
+  }
+
+  @media (max-width: 479px) {
+    flex-basis: 100%;
+  }
+}
+
+:global(.m + .field-help) {
+  flex-basis: 40%;
+
+  @media (max-width: 479px) {
+    flex-basis: 100%;
+  }
+}
+
+:global(.l + .field-help) {
+  flex-basis: 40%;
+
+  @media (max-width: 767px) {
+    flex-basis: 100%;
+  }
+}
+
+:global(.s + .field-help),
+:global(.m + .field-help) {
+  @media screen and (min-width: 479px) {
+    margin-left: 2.5%;
+    padding-left: 2.5%;
+    border-left: 1px solid ui-silver;
+  }
+}
+
+:global(.l + .field-help) {
+  @media screen and (min-width: 767px) {
+    margin-left: 2.5%;
+    padding-left: 2.5%;
+    border-left: 1px solid ui-silver;
+  }
+}
+
+:global(.s.has-label + .field-help),
+:global(.m.has-label + .field-help) {
+  @media screen and (min-width: 479px) {
+    margin-top: 44px;
+  }
+}
+
+:global(.l.has-label + .field-help) {
+  @media screen and (min-width: 767px) {
+    margin-top: 44px;
+  }
+}
+
+:global(.ui-input + .field-help),
+:global(.ui-spinner + .field-help) {
+  margin-top: margin-m;
 }
 
 :global(.ui-spinner) {

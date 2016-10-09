@@ -25,3 +25,20 @@
     margin-bottom: 12px;
   }
 }
+
+:global(.content-wrap) {
+  position: relative;
+  border: 1px solid ui-silver;
+  border-radius: 2px;
+  background-color: white;
+  clear: fix;
+}
+
+:global(.content-row) {
+  padding: 32px 24px;
+  clear: fix;
+
+  @media (max-width: 479px) {
+    padding: 24px 12px;
+  }
+}
