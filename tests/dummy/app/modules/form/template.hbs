@@ -3,11 +3,15 @@
     <h2>UI Input</h2>
 
     {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
+      {{f.input subject=person name="name" label="Small" value=person.name readonly=true}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
+      {{f.input subject=person name="name" label="Middle" value=person.name disabled=true}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="middle-upper" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
@@ -15,13 +19,18 @@
     {{/ui-fieldset}}
 
     {{#ui-fieldset size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
+      {{f.input subject=person name="name" label="Small" value=person.name}}
+      {{f.input subject=person name="name" label="Small" value=person.name}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
+      {{f.input subject=person name="name" label="Middle" value=person.name}}
+      {{f.input subject=person name="name" label="Middle" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="middle-upper" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
+      {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}
@@ -29,16 +38,14 @@
       {{f.input subject=person name="name" label="Label" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" size="small" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
+    {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person name="name" label="Middle" value=person.name}}
+      {{f.input subject=person name="name" label="Middle" value=person.name}}
     {{/ui-fieldset}}
 
-    {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
-      {{f.input subject=person name="name" label="Label" value=person.name}}
+    {{#ui-fieldset direction="row" size="middle-upper" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
+      {{f.input subject=person name="name" label="Middle Upper" value=person.name}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset direction="row" size="large" help="<strong>This is something can helps you out.</strong>" as |f|}}

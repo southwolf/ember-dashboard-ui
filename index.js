@@ -15,14 +15,30 @@ module.exports = {
       ],
       virtualModules: {
         'ui-colors': {
-          'ui-blue': '#1894f2',
-          'ui-gray': '#919ba2',
-          'ui-green': '#2ecc71',
-          'ui-slate': '#4e5b68',
-          'ui-golden': '#f1c40f',
+          'ui-white': '#fff',
           'ui-purple': '#5940aa',
+          'ui-blue': '#1894f2',
+          'ui-green': '#2ecc71',
+          'ui-tomato': '#e74c3c',
+          'ui-golden': '#f1c40f',
+          'ui-light': 'color(#bdc3c7 a(24%))',
+          'ui-fade-silver': 'color(#bdc3c7 a(48%))',
           'ui-silver': '#bdc3c7',
-          'ui-tomato': '#e74c3c'
+          'ui-gray': '#919ba2',
+          'ui-slate': '#4e5b68',
+          'ui-dark-slate': '#34495e'
+        },
+        'ui-radius': {
+          'radius-s': '2px',
+          'radius-m': '3px',
+          'radius-l': '4px'
+        },
+        'ui-margin': {
+          'margin-xs': '6px',
+          'margin-s': '8px',
+          'margin-m': '12px',
+          'margin-l': '24px',
+          'margin-xl': '48px'
         },
         'ui-zindex': {
           'ui-notify': 50,
