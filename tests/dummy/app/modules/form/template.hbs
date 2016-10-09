@@ -66,11 +66,11 @@
     <h2>UI Checkbox</h2>
 
     {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is Small"}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is Small" disabled=true}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.checkbox subject=person checked=person.alive name="e1" label="This is Middle"}}
+      {{f.checkbox subject=person checked=person.alive name="e1" label="This is Middle" disabled=true}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
@@ -122,11 +122,11 @@
   </div>
 
   <div class="example">
-    <h2>UI Checkbox</h2>
+    <h2>UI Radio</h2>
 
     {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
-      {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+      {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender') disabled=true}}
+      {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender') disabled=true}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
@@ -204,7 +204,6 @@
     {{/ui-fieldset}}
 
     {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
       {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
       {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}

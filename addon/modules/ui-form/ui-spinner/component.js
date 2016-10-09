@@ -27,7 +27,7 @@ export default Component.extend({
     const unit = get(this, 'unit');
     const position = this.getWithDefault('unitPosition', 'l');
     if (isPresent(unit)) {
-      return htmlSafe(`<span class="spinner-unit ${position}">${unit}</span>`);
+      return htmlSafe(`<div class="spinner-unit ${position}">${unit}</div>`);
     } else return '';
   }),
 

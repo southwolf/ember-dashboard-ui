@@ -4,7 +4,7 @@
 /* Top Level Global Styles */
 *, *::before, *::after {
   box-sizing: border-box;
-  backface-visibility: hidden;
+  /*backface-visibility: hidden;*/
 }
 
 html,

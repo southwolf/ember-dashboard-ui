@@ -146,10 +146,26 @@
   }
 }
 
+:global(.field-error) {
+  margin-top: margin-m;
+  padding: 0 margin-xs;
+  border-radius: radius-s;
+  color: ui-tomato;
+  background-color: color(ui-tomato a(20%));
+
+  @media (--mobile) {
+    font-size: 12px;
+  }
+}
+
 :global(.field-help) {
   position: relative;
   flex-grow: 1;
   color: ui-gray;
+
+  @media (--mobile) {
+    font-size: 12px;
+  }
 }
 
 :global(.field-control.s + .field-help),
@@ -188,14 +204,6 @@
   margin-top: margin-m;
 }
 
-:global(.field-error) {
-  margin-top: margin-m;
-  padding: 0 margin-xs;
-  border-radius: radius-s;
-  color: ui-tomato;
-  background-color: color(ui-tomato a(20%));
-}
-
 :global(.ui-input) {
   & input {
     margin-top: margin-m;
@@ -208,7 +216,6 @@
   }
 }
 
-:global(.has-label + .field-help),
 :global(.has-label + .field-help) {
   margin-top: 44px;
 }
@@ -218,12 +225,15 @@
     position: relative;
     margin-top: margin-m;
 
+    & input {
+      padding: 7px 36px;
+    }
+
     & > [type=number] {
       text-align: center;
     }
 
-    & > :global(.increase),
-    & > :global(.decrease) {
+    & > a {
       cursor: pointer;
       position: absolute;
       top: 1px;
@@ -258,6 +268,24 @@
   }
 }
 
+:global(.spinner-unit) {
+  position: absolute;
+  top: 1px;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: ui-gray;
+
+  &:global(.l) {
+    left: 36px;
+  }
+
+  &:global(.r) {
+    right: 36px;
+  }
+}
+
 :global(.ui-checkbox),
 :global(.ui-radio) {
   & > div {
@@ -272,18 +300,33 @@
     display: inline-block;
     vertical-align: bottom;
 
-    & > path {
+    & path {
       transition: fill 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+
+  & :disabled {
+    & ~ label {
+      color: ui-gray;
+      cursor: not-allowed;
+
+      & path {
+        fill: ui-gray;
+      }
     }
   }
 }
 
-:global(.checked-svg) {
-  fill: ui-purple;
+:global(.checked) {
+  & path {
+    fill: ui-purple;
+  }
 }
 
-:global(.unchecked-svg) {
-  fill: ui-silver;
+:global(.unchecked) {
+  & path {
+    fill: ui-silver;
+  }
 }
 
 :global(.s.ui-radio + .field-help),
@@ -315,12 +358,16 @@
 :global(.ui-checkbox) {
   & label {
     &:hover {
-      & :global(.checked-svg) {
-        fill: color(ui-purple s(24%));
+      & :global(.checked) {
+        & paht {
+          fill: color(ui-purple s(+24%));
+        }
       }
 
-      & :global(.unchecked-svg) {
-        fill: ui-gray;
+      & :global(.unchecked) {
+        & path {
+          fill: ui-gray;
+        }
       }
     }
   }
