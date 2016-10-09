@@ -296,10 +296,6 @@
 
 :global(.ui-checkbox),
 :global(.ui-radio) {
-  & > div {
-    margin-top: margin-m;
-  }
-
   & input {
     display: none;
   }
