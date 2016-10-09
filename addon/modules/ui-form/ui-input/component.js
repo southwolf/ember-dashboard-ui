@@ -8,6 +8,8 @@ import { htmlSafe } from 'ember-string';
 export default Component.extend({
   layout,
 
+  type: 'text',
+
   hasLabel: computed('label', function() {
     return isPresent(get(this, 'label'));
   }),
