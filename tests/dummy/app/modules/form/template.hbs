@@ -3,7 +3,7 @@
     <h2>UI Input</h2>
 
     {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.input subject=person name="name" label="Small" value=person.name readonly=true}}
+      {{f.input name="name" value=person.name readonly=true}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}

@@ -16,11 +16,11 @@ export default Component.extend({
     return get(this, 'checked') ? 'checked' : 'unchecked';
   }),
 
-  errorContent: computed('subject.error', function() {
-    const error = get(this, 'subject.error');
+  errorContent: computed('subject.error', 'error', function() {
+    const error = get(this, 'subject.error') || get(this, 'error');
     if (isPresent(error)) {
-      return htmlSafe(`<div class="field-error">${error}</div>`)
-    }
+      return htmlSafe(`<div class="field-error">${error}</div>`);
+    } else return '';
   }),
 
   didInsertElement() {

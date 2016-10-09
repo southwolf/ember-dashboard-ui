@@ -31,19 +31,21 @@ export default Component.extend({
     } else return '';
   }),
 
-  errorContent: computed('subject.error', function() {
-    const error = get(this, 'subject.error');
+  errorContent: computed('subject.error', 'error', function() {
+    const error = get(this, 'subject.error') || get(this, 'error');
     if (isPresent(error)) {
       return htmlSafe(`<div class="field-error">${error}</div>`);
     } else return '';
   }),
 
   didInsertElement() {
+    this.element.parentElement.classList.add('ui-spinner');
+
     if (get(this, 'hasLabel')) {
       const input = this.element.querySelector('input');
       const label = this.element.querySelector('label');
       label.setAttribute('for', input.id);
-      this.element.parentElement.classList.add('ui-spinner', 'has-label');
+      this.element.parentElement.classList.add('has-label');
     }
   },
 
