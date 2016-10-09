@@ -1,7 +1,6 @@
 @value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 @value radius-s, radius-m, radius-l from 'ui-radius';
 @value margin-xs, margin-s, margin-m, margin-l, margin-xl from 'ui-margin';
-@import "../../_styles/extend.css";
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
@@ -84,11 +83,7 @@
     }
 
     @media (max-width: 479px) {
-      flex-direction: column;
 
-      & > div {
-        margin-right: 0;
-      }
     }
   }
 
@@ -126,6 +121,18 @@
 
   &:global(.xl) {
     flex-basis: 100%;
+  }
+
+  &:global(.m),
+  &:global(.l),
+  &:global(.xl) {
+    @media (max-width: 479px) {
+      flex-direction: column;
+
+      & > div {
+        margin-right: 0;
+      }
+    }
   }
 
   & > div {
@@ -306,8 +313,28 @@
 
 :global(.ui-checkbox),
 :global(.ui-radio) {
+  & > div {
+    margin-bottom: margin-m;
+  }
+
   & input {
     display: none;
+  }
+
+  & label {
+    &:hover {
+      & :global(.checked) {
+        & paht {
+          fill: color(ui-purple s(+24%));
+        }
+      }
+
+      & :global(.unchecked) {
+        & path {
+          fill: ui-gray;
+        }
+      }
+    }
   }
 
   & svg {
@@ -344,46 +371,7 @@
   }
 }
 
-:global(.s.ui-radio + .field-help),
-:global(.m.ui-radio + .field-help),
-:global(.l.ui-radio + .field-help),
-:global(.s.ui-checkbox + .field-help),
-:global(.m.ui-checkbox + .field-help),
-:global(.l.ui-checkbox + .field-help) {
-  margin-top: margin-l;
-}
-
-:global(.l.ui-radio + .field-help),
-:global(.l.ui-checkbox + .field-help) {
-  @media (--below-laptop) {
-    margin-top: margin-m;
-  }
-}
-
-:global(.s.ui-radio + .field-help),
-:global(.s.ui-checkbox + .field-help),
-:global(.m.ui-radio + .field-help),
-:global(.m.ui-checkbox + .field-help) {
-  @media (--mobile) {
-    margin-top: margin-m;
-  }
-}
-
-:global(.ui-radio),
-:global(.ui-checkbox) {
-  & label {
-    &:hover {
-      & :global(.checked) {
-        & paht {
-          fill: color(ui-purple s(+24%));
-        }
-      }
-
-      & :global(.unchecked) {
-        & path {
-          fill: ui-gray;
-        }
-      }
-    }
-  }
+:global(.ui-radio + .field-help),
+:global(.ui-checkbox + .field-help) {
+  margin: margin-m 0;
 }

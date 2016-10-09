@@ -9,7 +9,7 @@ export default Controller.extend({
     number: 54,
     alive: true,
     online: true,
-    error: 'Something wrong has happened'
+    //error: 'Something wrong has happened'
   }),
 
   actions: {

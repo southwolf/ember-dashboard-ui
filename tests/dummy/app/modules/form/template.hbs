@@ -40,6 +40,11 @@
           {{f.input subject=person name="name" label="Label" value=person.name}}
         {{/ui-fieldset}}
 
+        {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+          {{f.input subject=person name="name" label="Middle" value=person.name}}
+          {{f.input subject=person name="name" label="Middle" value=person.name}}
+        {{/ui-fieldset}}
+
         {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
           {{f.input subject=person name="name" label="Middle" value=person.name}}
           {{f.input subject=person name="name" label="Middle" value=person.name}}
@@ -74,7 +79,7 @@
         {{/ui-fieldset}}
 
         {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-          {{f.checkbox subject=person checked=person.alive name="e1" label="This is Middle" disabled=true}}
+          {{f.checkbox subject=person checked=person.alive name="e1" label="This is something can helps you out." disabled=true}}
         {{/ui-fieldset}}
 
         {{#ui-fieldset size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
@@ -160,7 +165,7 @@
           {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
         {{/ui-fieldset}}
 
-        {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+        {{#ui-fieldset direction="row" size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
           {{f.radio subject=person value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
           {{f.radio subject=person value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
           {{f.radio subject=person value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
