@@ -7,7 +7,6 @@ import { htmlSafe } from 'ember-string';
 
 export default Component.extend({
   layout,
-  classNames: ['ui-checkbox'],
 
   checkedClass: computed('checked', function() {
     return get(this, 'checked') ? 'checked' : 'unchecked';
@@ -24,5 +23,6 @@ export default Component.extend({
     const input = this.element.querySelector('input');
     const label = this.element.querySelector('label');
     label.setAttribute('for', input.id);
+    this.element.parentNode.classList.add('ui-checkbox');
   }
 });

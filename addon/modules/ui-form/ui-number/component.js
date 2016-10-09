@@ -8,7 +8,6 @@ import set from 'ember-metal/set';
 
 export default Component.extend({
   layout,
-  classNames: ['ui-number'],
   classNameBindings: ['disabled'],
 
   hasDisabled: reads('disabled'),
@@ -36,7 +35,7 @@ export default Component.extend({
       const input = this.element.querySelector('input');
       const label = this.element.querySelector('label');
       label.setAttribute('for', input.id);
-      this.element.parentElement.classList.add('has-label');
+      this.element.parentElement.classList.add('ui-number', 'has-label');
     }
   },
 

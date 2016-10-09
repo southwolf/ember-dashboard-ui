@@ -10,7 +10,7 @@ export default Component.extend({
   classNames: ['ui-fieldset'],
 
   sizeClass: computed('size', function() {
-    return ` ${this.getWithDefault('size', 'middle')}`;
+    return ` ${this.getWithDefault('size', 'm')}`;
   }),
 
   directionClass: computed('size', function() {

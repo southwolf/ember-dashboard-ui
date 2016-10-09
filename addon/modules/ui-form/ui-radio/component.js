@@ -7,7 +7,6 @@ import { htmlSafe } from 'ember-string';
 
 export default Component.extend({
   layout,
-  classNames: ['ui-radio'],
 
   checked: computed('currentValue', function() {
     return get(this, 'value') == get(this, 'currentValue');
@@ -28,5 +27,6 @@ export default Component.extend({
     const input = this.element.querySelector('input');
     const label = this.element.querySelector('label');
     label.setAttribute('for', input.id);
+    this.element.parentNode.classList.add('ui-radio');
   }
 });
