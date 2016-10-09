@@ -23,11 +23,19 @@ export default Component.extend({
     } else return '';
   }),
 
+  unitContent: computed('hasUnit', function() {
+    const unit = get(this, 'unit');
+    const position = this.getWithDefault('unitPosition', 'l');
+    if (isPresent(unit)) {
+      return htmlSafe(`<span class="spinner-unit ${position}">${unit}</span>`);
+    } else return '';
+  }),
+
   errorContent: computed('subject.error', function() {
     const error = get(this, 'subject.error');
     if (isPresent(error)) {
-      return htmlSafe(`<div class="field-error">${error}</div>`)
-    }
+      return htmlSafe(`<div class="field-error">${error}</div>`);
+    } else return '';
   }),
 
   didInsertElement() {

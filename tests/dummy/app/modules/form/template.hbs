@@ -189,12 +189,12 @@
     {{/ui-fieldset}}
 
     {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
-      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label" unit="$"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label" unit="<i class='ic'></i>"}}
     {{/ui-fieldset}}
 
     {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
-      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label" unit="$" unitPosition="r"}}
       {{f.spinner subject=person value=person.number min=10 max=100 step=5 label="Label"}}
     {{/ui-fieldset}}
 
