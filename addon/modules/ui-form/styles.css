@@ -75,15 +75,12 @@
     flex-flow: row nowrap;
 
     & > div {
+      flex-basis: 100%;
       margin-right: margin-m;
 
       &:last-of-type {
         margin-right: 0;
       }
-    }
-
-    @media (max-width: 479px) {
-
     }
   }
 
@@ -135,10 +132,6 @@
     }
   }
 
-  & > div {
-    flex-grow: 1;
-  }
-
   & label {
     position: relative;
     display: inline-block;
@@ -150,6 +143,15 @@
   & input {
     position: relative;
     width: 100%;
+  }
+}
+
+:global(.field-control.ui-input),
+:global(.field-control.ui-spinner),
+:global(.field-control.ui-radio),
+:global(.field-control.ui-checkbox) {
+  & > div {
+    flex-grow: 1;
   }
 }
 
@@ -375,3 +377,22 @@
 :global(.ui-checkbox + .field-help) {
   margin: margin-m 0;
 }
+
+:global(.s.custom + .field-help),
+:global(.m.custom + .field-help) {
+  @media (max-width: 479px) {
+    margin-top: margin-m;
+  }
+}
+
+:global(.l.custom + .field-help) {
+  @media (max-width: 767px) {
+    margin-top: margin-m;
+  }
+}
+
+:global(.xl.custom + .field-help) {
+  margin-top: margin-m;
+}
+
+
