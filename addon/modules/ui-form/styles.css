@@ -178,6 +178,7 @@
   line-height: normal;
   flex-grow: 1;
   color: ui-gray;
+  font-size: 13px;
 
   @media (max-width: 479px) {
     font-size: 12px;
@@ -373,9 +374,22 @@
   }
 }
 
-:global(.ui-radio + .field-help),
-:global(.ui-checkbox + .field-help) {
-  margin: margin-m 0;
+:global(.s.ui-radio + .field-help),
+:global(.s.ui-checkbox + .field-help),
+:global(.m.ui-radio + .field-help),
+:global(.m.ui-checkbox + .field-help) {
+  @media screen and (min-width: 479px) {
+    margin-top: margin-m;
+    margin-bottom: margin-m;
+  }
+}
+
+:global(.l.ui-radio + .field-help),
+:global(.l.ui-checkbox + .field-help) {
+  @media screen and (min-width: 767px) {
+    margin-top: margin-m;
+    margin-bottom: margin-m;
+  }
 }
 
 :global(.s.custom + .field-help),
