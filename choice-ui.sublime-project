@@ -1,0 +1,57 @@
+{
+  "folders": [
+    {
+      "file_exclude_patterns": [
+        "*.pyc",
+        "*.pyo",
+        "*.exe",
+        "*.dll",
+        "*.obj",
+        "*.o",
+        "*.a",
+        "*.lib",
+        "*.so",
+        "*.dylib",
+        "*.ncb",
+        "*.sdf",
+        "*.suo",
+        "*.pdb",
+        "*.idb",
+        ".DS_Store",
+        "*.class",
+        "*.psd",
+        "*.db",
+        "*.npmignore",
+        "*.yml",
+        ".eslintrc.js",
+        "CNAME",
+        "*.bowerrc",
+        "*.sublime-workspace",
+        "*.watchmanconfig",
+        "ember-cli-build.js",
+        "testem.js",
+        "*.ember-cli"
+      ],
+      "folder_exclude_patterns": [
+        ".svn",
+        ".git",
+        ".idea",
+        ".hg",
+        "CVS",
+        "bower_components",
+        "node_modules",
+        "tmp",
+        "vendor",
+        "server",
+        "dist",
+        "config"
+      ],
+      "name": "ember-choice-ui",
+      "path": "~Sites/ember-choice-ui"
+    }
+  ],
+  "settings": {
+    "tab_size": 2,
+    "word_wrap": false
+  }
+}
