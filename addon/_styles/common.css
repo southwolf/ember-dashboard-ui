@@ -1,97 +1,9 @@
 @import "./extend.css";
-@value ui-slate from 'ui-colors';
-
-/* Top Level Global Styles */
-*, *::before, *::after {
-  box-sizing: border-box;
-  /*backface-visibility: hidden;*/
-}
-
-html,
-body,
-:global(body.ember-application > .ember-view) {
-  height: fallback(100vh, 100%);
-}
-
-body {
-  color: ui-slate;
-  font: normal 14px / 20px sans-serif;
-
-  /* Partially Supported Styles */
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: 'liga', 'kern';
-}
-
-/* Fonts for Locales */
-html[lang=en-us] > body {
-  font-family: Myriad Set Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-
-html[lang=zh-cn] > body {
-  font-family: PingFang SC, Helvetica Neue, Helvetica, STHeitiSC-Light, Arial, sans-serif;
-}
-
-/* Reset Common HTML Tags */
-h1, h2, h3, h4, h5, h6, p, blockquote, dl, ol, ul {
-  margin: initial;
-}
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 
 /* {{ui-draggable}} Cursors */
 :global(.ui-draggable.draggable),
 :global(.ui-draggable .drag-handle) {
   cursor: fallback(grab, move);
   &:active {cursor: grabbing}
-}
-
-/*Layout*/
-:global(.main-wrapper) {
-  height: auto !important;
-  min-height: 100%;
-  clear: both;
-  padding: 130px 0 122px 0;
-  margin-bottom: -62px;
-}
-
-:global(.content-wrapper) {
-  position: relative;
-  clear: fix;
-
-  @media (max-width: 991px) {
-    padding: 0 6.5%;
-  }
-
-  @media (max-width: 767px) {
-    padding: 0;
-  }
-}
-
-:global(.w-container) {
-  position: relative;
-  max-width: 940px;
-  margin-right: auto;
-  margin-left: auto;
-  clear: fix;
-
-  @media screen and (min-width: 1200px) {
-    min-width: 1170px;
-  }
-
-  @media (max-width: 991px) {
-    width: 728px;
-    max-width: 728px;
-  }
-
-  @media (max-width: 767px) {
-    width: auto;
-    max-width: 728px;
-    padding: 0 24px;
-  }
-
-  @media (max-width: 479px) {
-    max-width: none;
-    padding: 0 12px;
-  }
 }

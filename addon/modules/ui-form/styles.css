@@ -1,6 +1,6 @@
 @value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 @value radius-s, radius-m, radius-l from 'ui-radius';
-@value margin-xs, margin-s, margin-m, margin-l, margin-xl from 'ui-margin';
+@value spacing-xs, spacing-s, spacing-m, spacing-l, spacing-xl from 'ui-spacing';
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
@@ -76,7 +76,7 @@
 
     & > div {
       flex-basis: 100%;
-      margin-right: margin-m;
+      margin-right: spacing-m;
 
       &:last-of-type {
         margin-right: 0;
@@ -136,7 +136,7 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
-    margin-top: margin-m;
+    margin-top: spacing-m;
     user-select: none;
   }
 
@@ -156,8 +156,8 @@
 }
 
 :global(.field-error) {
-  margin-top: margin-m;
-  padding: 0 margin-xs;
+  margin-top: spacing-m;
+  padding: 0 spacing-xs;
   border-radius: radius-s;
   color: ui-tomato;
   background-color: color(ui-tomato a(20%));
@@ -169,7 +169,7 @@
 
 :global(.ui-input) {
   & input {
-    margin-top: margin-m;
+    margin-top: spacing-m;
   }
 }
 
@@ -245,13 +245,13 @@
 
 :global(.ui-input + .field-help),
 :global(.ui-spinner + .field-help) {
-  margin-top: margin-m;
+  margin-top: spacing-m;
 }
 
 :global(.ui-spinner) {
   & :global(.inner-wrapper) {
     position: relative;
-    margin-top: margin-m;
+    margin-top: spacing-m;
 
     & input {
       padding: 7px 36px;
@@ -317,7 +317,7 @@
 :global(.ui-checkbox),
 :global(.ui-radio) {
   & > div {
-    margin-bottom: margin-m;
+    margin-bottom: spacing-m;
   }
 
   & input {
@@ -343,7 +343,7 @@
   & svg {
     display: inline-block;
     vertical-align: bottom;
-    margin-right: margin-xs;
+    margin-right: spacing-xs;
 
     & path {
       transition: fill 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -379,34 +379,34 @@
 :global(.m.ui-radio + .field-help),
 :global(.m.ui-checkbox + .field-help) {
   @media screen and (min-width: 479px) {
-    margin-top: margin-m;
-    margin-bottom: margin-m;
+    margin-top: spacing-m;
+    margin-bottom: spacing-m;
   }
 }
 
 :global(.l.ui-radio + .field-help),
 :global(.l.ui-checkbox + .field-help) {
   @media screen and (min-width: 767px) {
-    margin-top: margin-m;
-    margin-bottom: margin-m;
+    margin-top: spacing-m;
+    margin-bottom: spacing-m;
   }
 }
 
 :global(.s.custom + .field-help),
 :global(.m.custom + .field-help) {
   @media (max-width: 479px) {
-    margin-top: margin-m;
+    margin-top: spacing-m;
   }
 }
 
 :global(.l.custom + .field-help) {
   @media (max-width: 767px) {
-    margin-top: margin-m;
+    margin-top: spacing-m;
   }
 }
 
 :global(.xl.custom + .field-help) {
-  margin-top: margin-m;
+  margin-top: spacing-m;
 }
 
 

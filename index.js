@@ -33,14 +33,15 @@ module.exports = {
           'radius-m': '3px',
           'radius-l': '4px'
         },
-        'ui-margin': {
-          'margin-xs': '6px',
-          'margin-s': '8px',
-          'margin-m': '12px',
-          'margin-l': '24px',
-          'margin-xl': '48px'
+        'ui-spacing': {
+          'spacing-xs': '6px',
+          'spacing-s': '8px',
+          'spacing-m': '12px',
+          'spacing-l': '24px',
+          'spacing-xl': '48px'
         },
         'ui-zindex': {
+          'ui-loading': 60,
           'ui-notify': 50,
           'ui-dialog': 40,
           'ui-curtain': 30,
