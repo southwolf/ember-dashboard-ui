@@ -1,0 +1,9 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{#each items as |item|}}
+    {{#link-to item.route tagName="li" activeClass=activeClass}}
+      {{link-to item.name item.route activeClass=""}}
+    {{/link-to}}
+  {{/each}}
+{{/if}}

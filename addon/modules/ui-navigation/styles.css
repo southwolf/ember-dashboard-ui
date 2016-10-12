@@ -1,4 +1,5 @@
 @value ui-menu from 'ui-zindex';
+@value ui-blue, ui-purple, ui-silver from 'ui-colors';
 
 .container {
   position: fixed 0 0 auto;
@@ -17,6 +18,18 @@
   clear: fix;
   position: relative;
   border-bottom: 1px solid transparent;
+
+  &:global(.nav-1st) {
+    height: 60px;
+    user-select: none;
+    background-color: ui-purple;
+  }
+
+  &:global(.nav-2nd) {
+    height: 70px;
+    background-color: white;
+    border-bottom-color: ui-silver;
+  }
 }
 
 .logo {
@@ -39,4 +52,50 @@
   @media (max-width: 767px) {
     margin: 0;
   }
+}
+
+.menu,
+.menu li {
+  display: inline-block;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.menu {
+  z-index: ui-menu;
+  &.r {
+    float: right;
+  }
+}
+
+.menu li {
+  margin: 0 16px;
+
+  &:before {
+    position: absolute auto 0 0 0;
+    height: 4px;
+    background: ui-blue;
+    content: '';
+    opacity: 0;
+    will-change: transform;
+    transform: scale3d(0, 1, 1);
+    transition: all 200ms ease-in;
+  }
+
+  &:hover:before {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  & > a {
+    padding: 20px 0;
+    color: white;
+    display: inline-block;
+    vertical-align: bottom;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: initial;
+  }
+}
+
+.menu.r li {
 }
