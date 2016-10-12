@@ -79,20 +79,6 @@
   }
 }
 
-:global(.header-control) {
-  @media (max-width: 991px) {
-    width: 100%;
-    text-align: center;
-    & > div {
-      display: inline-block;
-      float: none;
-      &:nth-of-type(1) {
-        margin-left: 0;
-      }
-    }
-  }
-}
-
 :global(.separator-bar) {
   clear: fix;
   padding: 8px 0;
