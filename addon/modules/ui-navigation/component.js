@@ -3,8 +3,9 @@ import Component from 'ember-component';
 import layout from './template';
 import styles from './styles';
 import computed from 'ember-computed';
-import { htmlSafe } from 'ember-string';
 import get from 'ember-metal/get';
+import { htmlSafe } from 'ember-string';
+import { bind, scheduleOnce } from 'ember-runloop';
 
 let scrolling = false,
     scrollDelta = 6,
@@ -17,7 +18,6 @@ export default Component.extend({
   layout, styles,
   tagName: 'header',
   localClassNames: ['container'],
-  localClassNameBindings: ['sticky'],
   attributeBindings: ['style'],
 
   height: 60,
@@ -29,10 +29,11 @@ export default Component.extend({
     this._super(...arguments);
 
     if ($window.scrollTop() >= scrollOffset) {
-      this.$().addClass('sticky');
+      scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
     }
 
-    this.boundAutoHideNavigation = this.autoHideNavigation.bind(this);
+    this.timer = null;
+    this.boundAutoHideNavigation = bind(this, this.autoHideNavigation);
     $window.on('scroll', this.boundAutoHideNavigation);
   },
 
@@ -42,9 +43,9 @@ export default Component.extend({
       currTop = $window.scrollTop();
 
       if (currTop - prevTop > scrollDelta && currTop > scrollOffset) {
-        this.$().addClass('sticky');
+        scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
       } else if (prevTop - currTop > scrollDelta) {
-        this.$().removeClass('sticky');
+        scheduleOnce('afterRender', this.element.classList, 'remove', 'sticky');
       }
 
       prevTop = currTop;

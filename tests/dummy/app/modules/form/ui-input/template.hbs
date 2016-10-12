@@ -1,0 +1,69 @@
+<div class="content-wrap">
+  <div class="content-row">
+    <h2>UI Input</h2>
+
+    {{#ui-fieldset size="s" help="This is something can helps you out.This is something can helps you out.This is something can helps you out.This is something can helps you out.This is something can helps you out.This is something can helps you out." as |f|}}
+      {{f.input name="name" value=person.name readonly=true}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="This is something can helps you out.This is something can helps you out.This is something can helps you out.This is something can helps you out.This is something can helps you out.This is something can helps you out." as |f|}}
+      {{f.input name="name" label="Middle" value=person.name disabled=true}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Middle Upper" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Label" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Small" value=person.name}}
+      {{f.input name="name" label="Small" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="" value=person.name error="" }}
+      {{f.input name="name" label="" value=person.name error="" }}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Middle Upper" value=person.name}}
+      {{f.input name="name" label="Middle Upper" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Label" value=person.name}}
+      {{f.input name="name" label="Label" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Middle" value=person.name}}
+      {{f.input name="name" label="Middle" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Middle" value=person.name}}
+      {{f.input name="name" label="Middle" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Middle Upper" value=person.name}}
+      {{f.input name="name" label="Middle Upper" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Label" value=person.name}}
+      {{f.input name="name" label="Label" value=person.name}}
+      {{f.input name="name" label="Label" value=person.name}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.input name="name" label="Label" value=person.name}}
+      {{f.input name="name" label="Label" value=person.name}}
+      {{f.input name="name" label="Label" value=person.name}}
+      {{f.input name="name" label="Label" value=person.name}}
+    {{/ui-fieldset}}
+  </div>
+</div>

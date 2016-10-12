@@ -1,0 +1,53 @@
+<div class="content-wrap">
+  <div class="content-row">
+    <h2>UI Radio</h2>
+
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender') disabled=true}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender') disabled=true}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="l" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+      {{f.radio value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+      {{f.radio value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.radio value=1 currentValue=person.gender name="gender" label="男" onChange=(action 'changeGender')}}
+      {{f.radio value=0 currentValue=person.gender name="gender" label="女" onChange=(action 'changeGender')}}
+      {{f.radio value=-1 currentValue=person.gender name="gender" label="人妖" onChange=(action 'changeGender')}}
+    {{/ui-fieldset}}
+  </div>
+</div>
