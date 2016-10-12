@@ -9,5 +9,6 @@ export default Component.extend({
   localClassNames: ['menu'],
   localClassNameBindings: ['pullRight:r'],
 
+  activeClass: 'current',
   pullRight: equal('position', 'r')
 }).reopenClass({ positionalParams: ['items'] });
