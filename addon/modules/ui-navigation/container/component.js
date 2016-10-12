@@ -10,6 +10,8 @@ export default Component.extend({
   layout, styles,
   tagName: 'nav',
   attributeBindings: ['style'],
+  classNames: ['nav'],
+  classNameBindings: ['isPrimary:primary', 'isSecondary:secondary'],
 
   style: computed('color', function() {
     const color = get(this, 'color');
