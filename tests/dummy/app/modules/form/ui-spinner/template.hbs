@@ -1,0 +1,56 @@
+<div class="content-wrap">
+  <div class="content-row">
+    <h2>UI spinner</h2>
+
+    {{#ui-fieldset size="s" help="" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label" readonly=true}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="" disabled=true}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label" unit="$"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label" unit="<i class='ic'></i>"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label" unit="$" unitPosition="r"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="s" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+
+    {{#ui-fieldset direction="row" size="xl" help="<strong>This is something can helps you out.</strong>" as |f|}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+      {{f.spinner value=person.number min=10 max=100 step=5 label="Label"}}
+    {{/ui-fieldset}}
+  </div>
+</div>
