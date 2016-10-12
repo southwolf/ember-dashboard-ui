@@ -1,10 +1,7 @@
 {{#ui-navigation as |nav|}}
   {{#nav.primary as |inner|}}
-    {{inner.menu menuOne}}
+    {{inner.menu menuOne position="l"}}
     {{inner.menu menuOne position="r"}}
-    {{#inner.menu}}
-      自定义菜单内容，随便写
-    {{/inner.menu}}
   {{/nav.primary}}
 
   {{#nav.secondary color="#ccc"}}

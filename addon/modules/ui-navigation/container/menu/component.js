@@ -6,9 +6,10 @@ import { equal } from 'ember-computed';
 export default Component.extend({
   layout, styles,
   tagName: 'ul',
-  localClassNames: ['menu'],
-  localClassNameBindings: ['pullRight:r'],
+  classNames: ['menu'],
+  classNameBindings: ['isPrimary:primary', 'isSecondary:secondary'],
 
   activeClass: 'current',
-  pullRight: equal('position', 'r')
+  isPrimary: equal('position', 'r'),
+  isSecondary: equal('position', 'l')
 }).reopenClass({ positionalParams: ['items'] });

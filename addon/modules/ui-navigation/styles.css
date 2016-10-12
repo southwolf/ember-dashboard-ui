@@ -54,21 +54,32 @@
   }
 }
 
-.menu,
-.menu li {
+:global(.menu),
+:global(.menu li) {
   display: inline-block;
   vertical-align: bottom;
   position: relative;
 }
 
-.menu {
+:global(.menu) {
   z-index: ui-menu;
-  &.r {
+
+  &:global(.secondary) {
     float: right;
   }
 }
 
-.menu li {
+:global(.menu li) {
+  & > a {
+    color: white;
+    display: inline-block;
+    vertical-align: bottom;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: initial;
+  }
+}
+
+:global(.menu.primary li) {
   margin: 0 16px;
 
   &:before {
@@ -90,13 +101,5 @@
 
   & > a {
     padding: 20px 0;
-    color: white;
-    display: inline-block;
-    vertical-align: bottom;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: initial;
   }
-}
-
-.menu.r li {
 }
