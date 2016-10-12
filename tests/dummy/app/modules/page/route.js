@@ -11,7 +11,10 @@ export default Route.extend({
         { name: '拖拽', route: 'drag-and-drop' },
         { name: '表单', route: 'form' },
         { name: '通知', route: 'notification' },
-      ]
+      ],
+      testToggle() {
+        alert('toggled!');
+      }
     })
   }
 });

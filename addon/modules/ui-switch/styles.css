@@ -1,0 +1,125 @@
+@value ui-white, ui-gary, ui-blue, ui-green, ui-purple, ui-silver from 'ui-colors';
+
+:global(.switch-button) {
+  cursor: pointer;
+  padding: 8px 0;
+  color: ui-gray;
+  clear: fix;
+
+  & > span {
+    font-size: 10px;
+    float: left;
+    margin-right: 4px;
+    user-select: none;
+  }
+}
+
+:global(.switch) {
+  position: relative;
+  display: inline-block;
+  float: left;
+  padding: 6px 0 6px 22px;
+  margin-top: 4px;
+  text-align: left;
+
+  & > span {
+    float: left;
+  }
+}
+
+:global(.switch:before),
+:global(.switch:after) {
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  content: '';
+  outline: 0;
+  transition: all .3s ease;
+}
+
+:global(.switch:before) {
+  left: 1px;
+  width: 20px;
+  height: 12px;
+  border-radius: 8px;
+  background-color: ui-silver;
+  transform: translate3d(0, -50%, 0);
+}
+
+:global(.switch:after) {
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: ui-white;
+  transform: translate3d(2px, -50%, 0);
+}
+
+:global(.switch.toggle-on:before) {
+  background-color: ui-purple;
+}
+
+:global(.switch.toggle-on:after) {
+  background-color: ui-white;
+  transform: translate3d(100%, -50%, 0);
+}
+
+:global(.switch.large) {
+  padding: 10px 0 10px 36px;
+  margin: 0;
+
+  &:before {
+    width: 32px;
+    height: 18px;
+    border-radius: 9px;
+  }
+
+  &:after {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+:global(.switch.large.toggle-on:before) {
+  background-color: ui-green;
+}
+
+:global(.switch.small) {
+  padding: 10px 0 10px 24px;
+
+  &:before {
+    width: 12px;
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  &:after {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+:global(.switch.small.toggle-on:before) {
+  background-color: ui-blue;
+}
+
+:global(.switch.huge) {
+  padding: 10px 0 10px 35px;
+  margin: 0;
+
+  &:before {
+    width: 34px;
+    height: 20px;
+    border-radius: 11px;
+  }
+
+  &:after {
+    left: 1px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+:global(.switch.huge.toggle-on:before) {
+  background-color: ui-blue;
+}
