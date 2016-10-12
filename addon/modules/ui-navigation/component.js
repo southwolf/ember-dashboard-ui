@@ -2,9 +2,6 @@ import $ from 'jquery';
 import Component from 'ember-component';
 import layout from './template';
 import styles from './styles';
-import computed from 'ember-computed';
-import get from 'ember-metal/get';
-import { htmlSafe } from 'ember-string';
 import { bind, scheduleOnce } from 'ember-runloop';
 
 let scrolling = false,
@@ -19,15 +16,16 @@ export default Component.extend({
   tagName: 'header',
   classNames: ['ui-navigation'],
   localClassNames: ['container'],
-  attributeBindings: ['style'],
-
-  height: 60,
-  style: computed('height', function() {
-    return htmlSafe(`height: ${get(this, 'height')}px`);
-  }),
 
   didInsertElement() {
     this._super(...arguments);
+
+    // TODO: wait for actual responsive breakpoints
+    scheduleOnce('render', this, 'autoDetectWrapperHeight');
+    const matchTablet = window.matchMedia('(max-width: 767px)');
+    const matchMobile = window.matchMedia('(max-width: 479px)');
+    matchTablet.addListener(bind(this, this.autoDetectWrapperHeight));
+    matchMobile.addListener(bind(this, this.autoDetectWrapperHeight));
 
     if ($window.scrollTop() >= scrollOffset) {
       scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
@@ -36,6 +34,11 @@ export default Component.extend({
     this.timer = null;
     this.boundAutoHideNavigation = bind(this, this.autoHideNavigation);
     $window.on('scroll', this.boundAutoHideNavigation);
+  },
+
+  autoDetectWrapperHeight(/*mediaQueriesList*/) {
+    const height = window.getComputedStyle(this.element.children[0]).height
+    this.element.style.height = height;
   },
 
   autoHideNavigation() {
