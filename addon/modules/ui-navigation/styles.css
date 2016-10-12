@@ -82,7 +82,8 @@
     transition: all 200ms ease-in;
   }
 
-  &:hover:before {
+  &:hover:before,
+  &:global(.current):before {
     opacity: 1;
     transform: scaleX(1);
   }
