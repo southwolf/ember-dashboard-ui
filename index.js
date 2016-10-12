@@ -4,6 +4,12 @@ module.exports = {
   name: 'ember-choice-ui',
 
   options: {
+    outputPaths: {
+      app: {
+        css: {'app': '/assets/bundle.css'},
+        js: '/assets/bundle.js',
+      },
+    },
     cssModules: {
       plugins: [
         require('postcss-import'),

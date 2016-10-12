@@ -17,6 +17,7 @@ let scrolling = false,
 export default Component.extend({
   layout, styles,
   tagName: 'header',
+  classNames: ['ui-navigation'],
   localClassNames: ['container'],
   attributeBindings: ['style'],
 

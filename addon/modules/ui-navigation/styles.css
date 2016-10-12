@@ -1,7 +1,7 @@
 @value ui-menu from 'ui-zindex';
 @value ui-blue, ui-purple, ui-silver from 'ui-colors';
 
-.container {
+:global(.ui-navigation) {
   position: fixed 0 0 auto;
   z-index: ui-menu;
   will-change: transform;
@@ -14,18 +14,18 @@
   }
 }
 
-.container > nav {
+:global(.ui-navigation) > nav {
   clear: fix;
   position: relative;
   border-bottom: 1px solid transparent;
 
-  &:global(.nav-1st) {
+  &:nth-of-type(1) {
     height: 60px;
     user-select: none;
     background-color: ui-purple;
   }
 
-  &:global(.nav-2nd) {
+  &:nth-of-type(2) {
     padding: 16px 0;
     background-color: white;
     border-bottom-color: ui-silver;
