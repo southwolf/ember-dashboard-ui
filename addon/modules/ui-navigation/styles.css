@@ -18,3 +18,25 @@
   position: relative;
   border-bottom: 1px solid transparent;
 }
+
+.logo {
+  padding: 20px 0;
+  margin-right: 64px;
+  fill: white;
+  display: inline-block;
+  vertical-align: bottom;
+
+  & svg {
+    height: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 991px) {
+    margin-right: 36px;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0;
+  }
+}
