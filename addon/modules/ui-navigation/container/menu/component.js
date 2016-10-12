@@ -10,6 +10,6 @@ export default Component.extend({
   classNameBindings: ['isPrimary:primary', 'isSecondary:secondary'],
 
   activeClass: 'current',
-  isPrimary: equal('position', 'r'),
-  isSecondary: equal('position', 'l')
+  isPrimary: equal('position', 'l'),
+  isSecondary: equal('position', 'r')
 }).reopenClass({ positionalParams: ['items'] });
