@@ -22,7 +22,6 @@
   position: relative;
   border-bottom: 1px solid transparent;
   &:global(.primary) {
-    height: 60px;
     user-select: none;
     background-color: ui-purple;
     & > div {
