@@ -19,6 +19,11 @@ export default Component.extend({
     return htmlSafe(`background-color: ${color};`);
   }),
 
+  normalClassName: computed('normal', function() {
+    const normal = get(this, 'normal');
+    return normal ? ' normal' : '';
+  }),
+
   isPrimary: equal('level', 'primary'),
   isSecondary: equal('level', 'secondary')
 }).reopenClass({ positionalParams: ['level'] });
