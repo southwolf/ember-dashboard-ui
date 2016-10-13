@@ -32,7 +32,7 @@
   &.blue {
     opacity: 1;
     border-radius: 3px;
-    background-color: var(--color-blue);
+    background-color: ui-blue;
     &:hover {
       background-color: color(ui-blue blackness(12%));
     }
