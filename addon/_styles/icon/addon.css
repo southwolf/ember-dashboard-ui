@@ -13,6 +13,8 @@
 }
 
 :global(.ic-add-48) {
+  display: inline-block;
+  vertical-align: middle;
   background-repeat: no-repeat;
   background-size: 72px;
 

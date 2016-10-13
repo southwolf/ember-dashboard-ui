@@ -13,6 +13,8 @@
 }
 
 :global(.ic) {
+  display: inline-block;
+  vertical-align: middle;
   background-repeat: no-repeat;
   background-size: 300px 280px;
 

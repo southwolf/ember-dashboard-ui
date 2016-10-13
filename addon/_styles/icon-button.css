@@ -6,8 +6,6 @@
   vertical-align: middle;
   cursor: pointer;
   & i {
-    display: inline-block;
-    vertical-align: middle;
     margin: 8px;
     opacity: .6;
     transition: opacity 200ms ease;
