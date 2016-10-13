@@ -50,14 +50,10 @@
       }
       & > h1 {
         display: inline-block;
-        float: left;
-        @media (max-width: 991px) {
+        vertical-align: bottom;
+        @media (max-width: 767px) {
           display: block;
-          float: none;
-          max-width: none;
           margin-bottom: spacing-m;
-          padding: 0 74px;
-          white-space: normal;
         }
       }
     }
@@ -137,7 +133,7 @@
   @media (max-width: 767px) {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid var(ui-white (48%));
+    border-top: 1px solid color(ui-white (48%));
     & li {
       margin: 0;
     }
@@ -150,6 +146,7 @@
     position: absolute 0 0 auto 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 728px;
     padding: 0 24px;
   }
