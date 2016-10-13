@@ -40,18 +40,17 @@
   & span {
     line-height: 20px;
     display: inline-block;
-    transition: color 200ms ease;
   }
-  &.medium {
+  &:global(.medium) {
     padding: 4px 12px;
   }
-  &.small {
+  &:global(.small) {
     padding: 2px 12px;
   }
-  &.white {
+  &:global(.white) {
     background-color: ui-white;
   }
-  &.blue {
+  &:global(.blue) {
     color: ui-white;
     background-color: ui-blue;
     transition: background-color 200ms ease;
@@ -59,7 +58,7 @@
       background-color: color(ui-blue blackness(24%));
     }
   }
-  &.purple {
+  &:global(.purple) {
     color: ui-white;
     background-color: ui-purple;
     transition: background-color 200ms ease;
@@ -67,7 +66,7 @@
       background-color: color(ui-purple blackness(12%));
     }
   }
-  &.green {
+  &:global(.green) {
     color: ui-white;
     background-color: ui-green;
     transition: background-color 200ms ease;
@@ -75,7 +74,7 @@
       background-color: color(ui-green blackness(12%));
     }
   }
-  &.red {
+  &:global(.red) {
     color: ui-white;
     background-color: ui-tomato;
     transition: background-color 200ms ease;
@@ -83,7 +82,7 @@
       background-color: color(ui-tomato blackness(12%));
     }
   }
-  &.golden {
+  &:global(.golden) {
     color: ui-white;
     background-color: ui-golden;
     transition: background-color 200ms ease;
@@ -91,7 +90,7 @@
       background-color: color(ui-golden blackness(12%));
     }
   }
-  &.gray {
+  &:global(.gray) {
     color: ui-gray;
     background-color: ui-fade-silver;
     transition: background-color 200ms ease, color 200ms ease;
@@ -100,7 +99,7 @@
       background-color: ui-silver;
     }
   }
-  &.dark {
+  &:global(.dark) {
     color: ui-white;
     background-color: ui-slate;
     transition: background-color 200ms ease;
@@ -108,7 +107,7 @@
       background-color: color(ui-slate blackness(12%));
     }
   }
-  .border {
+  &:global(.border) {
     color: ui-gray;
     box-shadow: inset ui-silver 0 0 0 1px;
     transition: box-shadow 200ms ease, color 200ms ease;

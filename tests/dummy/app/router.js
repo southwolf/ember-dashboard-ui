@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('icon');
   this.route('notification');
   this.route('page');
+  this.route('button');
 });
 
 export default Router;
