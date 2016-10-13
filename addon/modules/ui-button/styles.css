@@ -1,4 +1,4 @@
-@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-golden, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 
 :global(button) {
   position: relative;
@@ -83,12 +83,12 @@
       background-color: color(ui-tomato blackness(12%));
     }
   }
-  &.gold {
+  &.golden {
     color: ui-white;
-    background-color: ui-gold;
+    background-color: ui-golden;
     transition: background-color 200ms ease;
     &:hover {
-      background-color: color(ui-gold blackness(12%));
+      background-color: color(ui-golden blackness(12%));
     }
   }
   &.gray {
