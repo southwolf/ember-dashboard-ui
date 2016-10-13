@@ -57,13 +57,7 @@ module.exports = {
         }
       }
     },
-    nodeAssets: {
-      ['normalize.css']: {
-        import: {
-          include: [{ path: 'normalize.css', prepend: true }]
-        }
-      }
-    }
+    nodeAssets: {}
   },
 
   isDevelopingAddon() {
