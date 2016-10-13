@@ -5,8 +5,13 @@
 :global(.main-wrapper) {
   min-height: 100%;
   margin-bottom: -62px;
-  padding: 129px 0 122px 0;
+  padding: 129px 0 0 0;
+  &:global(.sticky) {
+    padding-bottom: 122px;
+  }
 }
+
+
 
 :global(.content-wrapper) {
   position: relative;
