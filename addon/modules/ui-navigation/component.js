@@ -9,7 +9,10 @@ let scrolling = false,
     scrollOffset = 120,
     prevTop = 0,
     currTop = 0,
-    $window = $(window);
+    $window = $(window),
+    matchNormal = window.matchMedia('(max-width: 991px)'),
+    matchTablet = window.matchMedia('(max-width: 767px)'),
+    matchMobile = window.matchMedia('(max-width: 479px)')
 
 export default Component.extend({
   layout, styles,
@@ -20,25 +23,26 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    // TODO: wait for actual responsive breakpoints
     scheduleOnce('render', this, 'autoDetectWrapperHeight');
-    const matchTablet = window.matchMedia('(max-width: 767px)');
-    const matchMobile = window.matchMedia('(max-width: 479px)');
-    matchTablet.addListener(bind(this, this.autoDetectWrapperHeight));
-    matchMobile.addListener(bind(this, this.autoDetectWrapperHeight));
+    matchNormal.addListener(bind(this, this.autoDetectWrapperHeight, 'normal'));
+    matchTablet.addListener(bind(this, this.autoDetectWrapperHeight, 'tablet'));
+    matchMobile.addListener(bind(this, this.autoDetectWrapperHeight, 'mobile'));
 
     if ($window.scrollTop() >= scrollOffset) {
       scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
     }
 
-    this.timer = null;
     this.boundAutoHideNavigation = bind(this, this.autoHideNavigation);
     $window.on('scroll', this.boundAutoHideNavigation);
   },
 
-  autoDetectWrapperHeight(/*mediaQueriesList*/) {
-    const height = window.getComputedStyle(this.element.children[0]).height
-    this.element.style.height = height;
+  autoDetectWrapperHeight(/*type, mql*/) {
+    const primaryHeight = window.getComputedStyle(this.element.children[0]).height;
+    this.element.style.height = primaryHeight;
+    const secondaryHeight = window.getComputedStyle(this.element.children[1]).height;
+    const paddingTop = parseInt(primaryHeight.replace('px', ''), 10)
+          + parseInt(secondaryHeight.replace('px', ''), 10);
+    this.element.parentNode.style.paddingTop = `${paddingTop - 1}px`;
   },
 
   autoHideNavigation() {
