@@ -15,6 +15,7 @@ module.exports = {
         require('postcss-import'),
         require('postcss-extend'),
         require('postcss-fallback'),
+        require('postcss-sassy-mixins'),
         require('rucksack-css')({ alias: false, hexRGBA: false, fallbacks: true }),
         require('postcss-cssnext'),
         require('postcss-browser-reporter')

@@ -1,7 +1,7 @@
 @value ui-purple, ui-silver from 'ui-colors';
 
 :global(body) {
-  background-color: color(ui-purple a(85%));
+  background-color: color(ui-silver a(24%));
 }
 
 :global(.container) {

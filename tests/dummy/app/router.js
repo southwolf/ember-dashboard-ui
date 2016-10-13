@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('drag-and-drop');
   this.route('form');
+  this.route('icon');
   this.route('notification');
   this.route('page');
 });

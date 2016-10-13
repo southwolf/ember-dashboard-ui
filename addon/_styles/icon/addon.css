@@ -1,0 +1,57 @@
+@mixin icon-addon-48($x: 0, $y: 0 ,$width: 0px, $height: 0px) {
+  width: calc($width / 2);
+  height: calc($height / 2);
+  background-position: calc($x / 2) calc($y / 2);
+}
+
+:global(.ic-add-48.dark) {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAflBMVEUAAAA0SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV7SQDzzAAAAKXRSTlMA+bYE52e+Ghdb8+2VVoDjCNwKsFnVmi8Rqcc1h3k6dtFGKpBjHqIlTuQzUb0AAAabSURBVHja7ZvplqIwEIXBuCCgKIrivi95/xecDtJTmpsgmhzonvH+6TbnnvYja6WKdj76EWo1mjxXs9HStlclr80f1Pa07bl2EVcq2lkBanNJbW17LuKRiayMFwe19O2ZuFY2gBqc80bHydXJPuraKwES87ZDHztiBmvbCcgB2QLiX4LPmvafDcQ5/Cxec+zcUwF0z6wKIFxzbMbdnoLH5TNWARAO4PmrxR0reDg/1wI0djMi5KGOsw+EdiRS8dQDhETIY3/ZIx4SAY/BxmgCRETAY3504JDpgZCoCzwGh6sBEGF0icco/DAGIiLiMQjQDICAiHhMQti3lz0SEY+BTIGIyBZP6WX/u4DsDZn1ST02nNQWl30v37PrX/Y5D50i9WyMyENEJkeH8bInHiIyOVwNgICHiCq5l6GHeODsr+Jehh7iwZO2WiDkQaJagM7EA9egWoD0F8UzqwPI/CptDvSjsh/VApVUdQmrkqospReV44kqS3ruolI8u4rSwqjaE+cK/dOlhY8++uhRbL0aJYHrBslotWBOGQ1C3w8H9Nmm/7RsPuzOy47zXKGwhthu7vcmLpfkhqnzTL4wBtBs7u8GXKHgaVIDYgE7fja5Gf3ZcZEy5i1aM59nCgun0rR/c/Wn1GbDHzcy2/A4uGs7DrlQQz8D1/O703FN7cZ+lvH4GyY1b7JZNWKa9TLhD6K1Y+zPnMOpooeH+jWRzrmkOS0BM3+Xf2nr5QyToesOw5zO2/Iv9VTPO+egOTwz+BvdE2OXbqPI7wWifzypWyc3syf6KEiVvYqaOMWjkCycXIuE/CqrP73xtO9m3Y1o6ioHbceVopmq8rdjaojbOv9JfONGfmyiWIkdEvbsuRpoTg70J4KHiBKNfykGjN16I+vWaxxfhZnfeo2JQVuSn5wq0cpA/0LaBNR+Js6vI3VQkmZLQhCFdJWJ4Ck06pNH9jfg0pb7kdPPZ7voi6uT6SrY8r714engFoO3GfR3YXVLfpois/x3MZvinELMnLx5xjlfwRVZrab+Sn2SGy9K/ygbMVAqOu7v9ZOYCV0tlzyyn8HWpPQnOB5Cx2wJ0Khu4czW6OWKiiyxK6a4KoK7QfcwgrEPVNyZPV8cqtC1tQEtKewgoCqHTLroiyCKkpdVDxlO6imdG9VMalz2LThs50zKOs0qAMKNkfbrPD9FG+OmMqCF2AFjeZpTAx0dFQGxiLZqFB2uFQBB+IGi8KMCIAzQ0EYBGmwML8UffT1QX33bdqcKIAphD894kAj92K7xpxTkI1BHDFgzLeZBIiO/06NrkAzUwWsQ/n38BhO/UFhwUcQB409l5KertLtiUvOKrtLVAjmDPNnQur84tYY84xk4NYiF3+mY1tobDLz133TMgTn1qBcoY/ZemYQYhd8kc38aYkrvkKIPg4X76NKqv7OMXk567rOODS7UYtXPFqvZVqSFt7PNouQ3jHx/RH+/rP+jjz76RaLiLegn/L+YTm3Per1szTSpsJJE5jRYLzvhePHSMhg1fb1s4hW8XIKCl0sMpKuXjbWv36Dw9Rv2pVcgsF6GmuA7ZTqhT2/fHxLfTw57fb0M9V0vi+0Dse/Yyw2Zpl6G8h228TMiZhuI3ZdUgAgrOxTU7YfZqNkGCqGkAhl1VHChetnYLtDefVjKe0W9DCSCOqiX2QI68Acdng2Y9Dg+dasloIQ/KIF0jAqItKF0jCUgXxqNZ5UmZcLqjY1RAtq2dHdrqJdJUpU9ojeODgmI83NcBmj9tMA0oKTnS4crAPH5qcSQrWSeq0OCetkr4QcC8WD3fFKPBLmi7yBx/k6ABs3upnjZ57jTvgSEqeztWyEsR4W4MarqZX09EBZfyoujJnB0qMtT/QIgBuWpsmrgkOHhqgZy+jC5jYBIOKkx/MAhUxEZDRkJlz0GaFgvUxGZTWoSbIworJepiCwsexIdHewYpo+ZuyPDepmKCOplNu5l8abJeUQI7Bhx3tzE+KoFEmG9zPxedsl36eiwO8XxaXeI8t36oqmXqYBa7x6uqGugww+uUC8DIOPwA7RzuVbuTlkv8zGQXb0doMmKm4VLM6YQluplIwj1F65BCAuxZ5E2qpfi9oG8WCKql5kCzYFB87rYmOplIo2M1p5jBSgoBgp0L1YqIgY7QPyJdPUyuMKyyoGc+L5eJvMMHEtAUTFPpHx9edRaS+PFHFtAu+iVfz8aF9fLzDZG1Jv1sjCtMKWHOkG9rNakJ9bLak8L/8DE+S8sLfxf+gNwbsaC1EXVbAAAAABJRU5ErkJggg==');
+}
+
+:global(.ic-add-48.light) {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAnFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+TINBkAAAAM3RSTlMA+rYEZ73nG1kX+PRWW5WACArk1dyw7Zjxh2MT6nl2NdHIKjirm5AuEOGiRzElHqc+w05P1b0/AAAGy0lEQVR42u2b2WLaMBBFMYKCMXGwzb6YkBDCkkCK/v/fGhmnA7oSgsq1k5b70jBM4VijZaQRpZu+hCrlHzzVj3JFa89LbpWfqOpq7ak2IVcq3GQCVOWSqlp7KuKRiTKJFwdV9PZEXKssgMqc83Lt81Uteamz5wIk+m2NXtZED9baCagEsgXCz6HXOvvXBuJc+tc05ti6qQK4W7M8gHDMsR13mgoeh+9YDkAYwPWHxakreDhfFwJUd1Ii4HGafw0I3ZFIxVMMEBIhT/bDHvGQCHgsJkYLICAiHvulA0NmAAIi4rFZXG2BiIh4rNIPayAiIh6LBM0CCIiIxyaFtRn20mAnHgvZAhFRVjwXD/vvBZRvyMxAd9Sp61ad2gYI19N09Bc/7FMemiGLmRiRh4hslg7rYU88RGSzuFoAAQ8R5bEvQx/kIaJc9mX0CnmAKF8g5EGiQoDWxCMTrXMFMm8U16wIIPuttD3Qlzr9yBfoQuV3YHWhcjvSCy/jCXM79NyEF/FscjoWRhV+cK7QP11auOmmmyQ9TTpR13G60XzyVLpILb/f91tgzsR/OwhPZudBrWSWL1x9tNv7j3oOl9TojUom9YVjH8z2/vUuV6hrPNSAXCAbf/bME/V3w+mIsdF0uPMOFp+Vzujlnie6fyFbFv5BmQu1h60j27CdGMv6Hvj+k9ry5zvZrf1ZwuPFTDLHDWHvMM14eeYn6hG5rX/i2X5RtHBbPyaWMy5ptqR3rfzr4t2HNCF57bUbjXYvpXMfxHtN1fPOOGgGzwz+5bstY2935XP+o65oHzdtVqlBXdFG45GyVVG90vkoRNPfM3Ck9++J/vNy4DnqddUD0WtDGbR3rhT1VJV/NSBDUNX5b8V8GMuPTfgTMUPCnD1TA/0kD/SPBA8RRRr/gQgYO7RG0qz7INgnDXpoNSaCNiB/8lSJRgb6T6V1E/xpHzSk4EXLZEhEFKgh53wFT6HRPfnI/mXYtKX+yNlPe7toi/3hz71gS9vWg6eDXQzuZtD/Dk4mJH/qIrv0b9F/g5RC9JzUvOOcT2CLbNhQov9WNr4p/TtJxEBLMfSOtp/z07cdHVCDfGR/BlOT0j+S40EdZ3YU1QdYszW6uqIiS8yKIxwV3aOgu2JuzANI35hNTyyq0LSFAQ0o7SCgAkMmkig6vMw7ZNipXynlKKJTz2HYP9MaA8P+rwLhxEjz9UZmjnMAonh46fQM8zUsHTkA0eKqU4UW11yAKP1AUfqRI1BNhChWulGC5sLEcFX+ca8HulensI0XBRClsAsTDxKhP9rBH5J8BHJXYlZcGniAyMq/1KRtEAHBNgg/X/8N1/tj0Hj7VZEKrzgGjBtl5U9b6caESeYJbaVzASK1Pg8bjjdOlTZPeFqlAsR8nsjbVZ7cVst9qsy9g2XBSsWoOeYKjU0HVim2R5bM/Ed+AzL2xRL9cI9wnF1m6l8brI5xVgO3ZNRjX7h238iSrf90Mn8YNxrjh3k8vfAbOp7Xgc83+t90003fSFS8BX2F34vpVHUzrpd1NPUyPU/2FwOwXrbFePGLVbEOxrOhXgaXSEBwucRGd+p6WV17/QaF12/YhwyuhnoZqod3ynRCP7374yLyvGjxqK+XoT7rZUH2QMz/vIbtM029DOWVWOwlRCxrIFY9Go0qImW8OqJh20nUsgby+ZF8RX+WWSipGyUbxXq2QI8nw9mBfuR2Eed3UjdqC7hRpkALfqKFKWDS43jUrBkBRfxEEdTLVECkmOplGQF5UjRMlSb1gdX1E6ME9FAh2rNfGBrep3rZlUuHBMT5OrgE6AmSGdj4i63U9PrFFYD4bHtByCYyz17ioXrZlekHAvHxxtypO4Ic2w4Ozv8oQQOzExuHvcB9vT8LNKXSwpUpLEf5ODFi8WVJx5IqjaD4YpYW6Nm0dAhaOrhVilF56kqVMWS4uCrrZXg0Od5bAZGwU2P6gfUyFZFVyEg47DFBw3qZisiuU5NgYkRhmVxFlMGwJ9HSwYb+8ti+9IcM62UqIqiXZbEvC+KP9g0JgQ3DjxaNA7xqgURYL7Pfl72ls3S42GyDYLtZhOls/aapl6mAKn+6uKL2fR1+fw/1Mh0QW/1p+gF6d7hWzjtcaBLyMJGdWCRopwp+nB2agape1oFUn658WQPF/KxiVb3sUQ5ylepl1kCz80AzuDaYHiOja7OUCVD/PFBfqpetXqBjw3psB8QN0tXLYAvL8gLCy7mVAP4f1cusgcIrfn7EeulAn1ekrJ/yA2ugTXjNz4/qXUO9zHpiRF1fL/OXeR7pmetltSIPPbFeVvyx8Fc8OP9+pYX/S78AyuKw77gx+eoAAAAASUVORK5CYII=');
+}
+
+:global(.ic-add-48) {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  display: block;
+  background-size: 72px;
+
+  &:global(.ic-building) {
+    @include icon-addon-48(0, 0, 48px, 48px);
+  }
+
+  &:global(.ic-close) {
+    @include icon-addon-48(-48px, 0, 48px, 48px);
+  }
+
+  &:global(.ic-dashboard) {
+    @include icon-addon-48(-96px, 0, 48px, 48px);
+  }
+
+  &:global(.ic-help) {
+    @include icon-addon-48(0, -48px, 48px, 48px);
+  }
+
+  &:global(.ic-notifications) {
+    @include icon-addon-48(-48px, -48px, 48px, 48px);
+  }
+
+  &:global(.ic-notifications-none) {
+    @include icon-addon-48(-96px, -48px, 48px, 48px);
+  }
+
+  &:global(.ic-public) {
+    @include icon-addon-48(0, -96px, 48px, 48px);
+  }
+
+  &:global(.ic-reports) {
+    @include icon-addon-48(-48px, -96px, 48px, 48px);
+  }
+
+  &:global(.ic-transfer) {
+    @include icon-addon-48(-96px, -96px, 48px, 48px);
+  }
+}
