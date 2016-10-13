@@ -107,6 +107,9 @@
     display: inline-block;
     vertical-align: bottom;
     margin-left: spacing-m;
+    @media (max-width: 767px) {
+      margin-left: 0;
+    }
   }
   @media (max-width: 991px) {
     margin-right: 36px;
