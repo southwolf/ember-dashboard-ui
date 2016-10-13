@@ -42,6 +42,11 @@ a {
   text-decoration: none;
 }
 
+/* 如果发现某些标签的字体继承缺失，补在这条规则里来覆盖 */
+input, textarea, keygen, select, button {
+  font-family: inherit;
+}
+
 input, textarea {
   -webkit-user-select: text !important;
   appearance: none;
