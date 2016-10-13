@@ -13,10 +13,7 @@
 }
 
 :global(.ic-add-48) {
-  width: 24px;
-  height: 24px;
   background-repeat: no-repeat;
-  display: block;
   background-size: 72px;
 
   &:global(.ic-building) {

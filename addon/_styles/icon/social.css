@@ -13,8 +13,6 @@
 }
 
 :global(.ic-social) {
-  position: relative;
-  display: block;
   background-repeat: no-repeat;
   background-size: 20px 200px;
 

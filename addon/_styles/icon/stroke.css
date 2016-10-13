@@ -13,8 +13,6 @@
 }
 
 :global(.ic) {
-  position: relative;
-  display: block;
   background-repeat: no-repeat;
   background-size: 300px 280px;
 

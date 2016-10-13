@@ -14,7 +14,6 @@
 
 :global(.ic-solid) {
   background-repeat: no-repeat;
-  display: block;
   background-size: 120px;
 
   &:global(.ic-backspace-1) {
