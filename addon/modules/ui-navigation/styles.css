@@ -1,6 +1,6 @@
 @value ui-menu from 'ui-zindex';
 @value spacing-xs, spacing-s, spacing-m, spacing-l, spacing-xl from 'ui-spacing';
-@value ui-white, ui-blue, ui-purple, ui-silver, ui-gray, ui-slate from 'ui-colors';
+@value ui-white, ui-blue, ui-purple, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 
 :global(.ui-navigation) {
   position: fixed 0 0 auto;
@@ -66,7 +66,7 @@
 
 :global(.ui-navigation.dark) > nav {
   &:global(.primary) {
-    background-color: ui-slate;
+    background-color: ui-dark-slate;
   }
 }
 
