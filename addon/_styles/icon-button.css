@@ -1,0 +1,56 @@
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
+
+:global(.box-button) {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  opacity: .5;
+  transition: opacity 200ms ease;
+  &:hover {
+    opacity: 1;
+  }
+  & i {
+    margin: 8px;
+  }
+  &.dark {
+    opacity: 1;
+    border-radius: 3px;
+    background-color: ui-slate;
+    &:hover {
+      background-color: color(ui-slate blackness(12%));
+    }
+  }
+  &.purple {
+    opacity: 1;
+    border-radius: 3px;
+    background-color: ui-purple;
+    &:hover {
+      background-color: color(ui-purple blackness(12%));
+    }
+  }
+  &.blue {
+    opacity: 1;
+    border-radius: 3px;
+    background-color: var(--color-blue);
+    &:hover {
+      background-color: color(ui-blue blackness(12%));
+    }
+  }
+  &.border {
+    border-radius: 3px;
+    border: 1px solid ui-silver;
+    transition: border 200ms;
+    &:hover {
+      border: 1px solid ui-slate;
+    }
+  }
+
+  &.purple,
+  &.blue,
+  &.dark {
+    & i {
+      margin: 2px;
+    }
+  }
+}
