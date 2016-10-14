@@ -1,0 +1,8 @@
+@value ui-purple from 'ui-colors';
+
+:global(.ui-footer) {
+  & :global(.logo) {
+    fill: ui-purple;
+    color: ui-purple;
+  }
+}

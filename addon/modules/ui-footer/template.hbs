@@ -1,0 +1,14 @@
+{{ui-logo "Help Center" "index" class="logo"}}
+
+<p>{{copyright}}</p>
+
+{{#each menus as |menu|}}
+  <section>
+    <h4>{{menu.title}}</h4>
+    <ul>
+      {{#each menu.items as |item|}}
+        <li>{{link-to item.name item.route}}</li>
+      {{/each}}
+    </ul>
+  </section>
+{{/each}}
