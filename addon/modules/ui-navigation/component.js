@@ -3,7 +3,6 @@ import Component from 'ember-component';
 import layout from './template';
 import styles from './styles';
 import get from 'ember-metal/get';
-import getOwner from 'ember-owner/get';
 import { bind, scheduleOnce } from 'ember-runloop';
 
 let scrolling = false,
@@ -12,6 +11,7 @@ let scrolling = false,
     prevTop = 0,
     currTop = 0,
     $window = $(window),
+    stickyBounded = false,
     matchNormal = window.matchMedia('(max-width: 991px)'),
     matchTablet = window.matchMedia('(max-width: 767px)'),
     matchMobile = window.matchMedia('(max-width: 479px)');
@@ -22,12 +22,22 @@ export default Component.extend({
   classNames: ['ui-navigation'],
   localClassNames: ['container'],
 
+  init() {
+    this._super(...arguments);
+    this.autoHideNavigation = bind(this, this._autoHideNavigation);
+  },
+
   didRender() {
     this._super(...arguments);
 
     if (get(this, 'noSticky')) {
       this.element.style.position = 'relative';
       this.element.parentNode.style.padding = 0;
+
+      // if already bounded, not to listen scroll event any longer
+      stickyBounded = !stickyBounded;
+      if (stickyBounded) $window.off('scroll', this.autoHideNavigation);
+
       return;
     }
 
@@ -37,12 +47,10 @@ export default Component.extend({
     matchMobile.addListener(bind(this, this.autoDetectNavigationHeight, 'mobile'));
 
     this.element.style.position = 'fixed';
-
     if ($window.scrollTop() >= scrollOffset) {
       scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
     }
-
-    this.autoHideNavigation = bind(this, this._autoHideNavigation);
+    stickyBounded = !stickyBounded;
     $window.on('scroll', this.autoHideNavigation);
   },
 
@@ -77,6 +85,7 @@ export default Component.extend({
   },
 
   willDestroy() {
+    stickyBounded = false;
     $window.off('scroll', this.autoHideNavigation);
   }
 });
