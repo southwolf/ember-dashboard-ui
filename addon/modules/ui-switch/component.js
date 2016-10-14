@@ -3,7 +3,7 @@ import layout from './template';
 import styles from './styles';
 import computed from 'ember-computed';
 import get from 'ember-metal/get';
-import { isBlank } from 'ember-utils';
+import { isBlank, tryInvoke } from 'ember-utils';
 
 export default Component.extend({
   layout, styles,
@@ -17,7 +17,7 @@ export default Component.extend({
   }),
 
   click() {
-    this.toggleProperty('toggle');
-    this.onToggle && this.onToggle();
+    const allowToggle = this.onToggle && this.onToggle();
+    if (allowToggle) this.toggleProperty('toggle');
   }
 }).reopenClass({ positionalParams: ['label', 'size'] });

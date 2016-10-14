@@ -18,4 +18,10 @@ export default Controller.extend({
 
     this._super(...arguments);
   },
+
+  actions: {
+    toggle() {
+      return window.confirm('Are you sure?');
+    }
+  }
 });
