@@ -1,10 +1,15 @@
 import Component from 'ember-component';
-import { htmlSafe } from 'ember-string';
+import layout from './template';
+import styles from './styles';
 import computed from 'ember-computed';
-import { isNone, tryInvoke } from 'ember-utils';
+import get from 'ember-metal/get';
+import { htmlSafe } from 'ember-string';
+import { tryInvoke } from 'ember-utils';
 
 export default Component.extend({
+  layout, styles,
   tagName: 'button',
+
   classNames: ['button'],
   classNameBindings: ['color', 'size'],
   attributeBindings: ['type', 'disabled'],
@@ -16,8 +21,8 @@ export default Component.extend({
 
   icon: null,
   iconMarkups: computed('icon', function() {
-    const icon = this.get('icon');
-    return isNone(icon) ? null : htmlSafe(`<i class="${icon}"></i>`);
+    const icon = get(this, 'icon');
+    return icon ? htmlSafe(`<i class="${icon}"></i>`) : null;
   }),
 
   click() {
