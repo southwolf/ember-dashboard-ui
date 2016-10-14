@@ -25,6 +25,7 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     this.autoHideNavigation = bind(this, this._autoHideNavigation);
+    this.autoDetectNavigationHeight = bind(this, this._autoDetectNavigationHeight);
   },
 
   didRender() {
@@ -34,38 +35,45 @@ export default Component.extend({
       this.element.style.position = 'relative';
       this.element.parentNode.style.padding = 0;
 
+      // remove mediaQueryList listeners
+      matchNormal.addListener(this.autoDetectNavigationHeight);
+      matchTablet.addListener(this.autoDetectNavigationHeight);
+      matchMobile.addListener(this.autoDetectNavigationHeight);
+
       // if already bounded, not to listen scroll event any longer
-      stickyBounded = !stickyBounded;
       if (stickyBounded) $window.off('scroll', this.autoHideNavigation);
+      stickyBounded = false;
 
       return;
     }
 
     scheduleOnce('render', this, 'autoDetectNavigationHeight');
-    matchNormal.addListener(bind(this, this.autoDetectNavigationHeight, 'normal'));
-    matchTablet.addListener(bind(this, this.autoDetectNavigationHeight, 'tablet'));
-    matchMobile.addListener(bind(this, this.autoDetectNavigationHeight, 'mobile'));
+    matchNormal.addListener(this.autoDetectNavigationHeight);
+    matchTablet.addListener(this.autoDetectNavigationHeight);
+    matchMobile.addListener(this.autoDetectNavigationHeight);
 
     this.element.style.position = 'fixed';
     if ($window.scrollTop() >= scrollOffset) {
       scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
     }
-    stickyBounded = !stickyBounded;
     $window.on('scroll', this.autoHideNavigation);
+    stickyBounded = true;
   },
 
-  autoDetectNavigationHeight(/*breakpoint, mediaQuery*/) {
-    const primaryHeight = window.getComputedStyle(this.element.children[0]).height;
-    this.element.style.height = primaryHeight;
+  _autoDetectNavigationHeight(/*breakpoint, mediaQuery*/) {
+    if (stickyBounded) {
+      const primaryHeight = window.getComputedStyle(this.element.children[0]).height;
+      this.element.style.height = primaryHeight;
 
-    let secondaryHeight = '0px';
-    if (this.element.children[1]) {
-      secondaryHeight = window.getComputedStyle(this.element.children[1]).height;
+      let secondaryHeight = '0px';
+      if (this.element.children[1]) {
+        secondaryHeight = window.getComputedStyle(this.element.children[1]).height;
+      }
+
+      const paddingTop = parseInt(primaryHeight.replace('px', ''), 10)
+            + parseInt(secondaryHeight.replace('px', ''), 10);
+      this.element.parentNode.style.paddingTop = `${paddingTop - 1}px`;
     }
-
-    const paddingTop = parseInt(primaryHeight.replace('px', ''), 10)
-          + parseInt(secondaryHeight.replace('px', ''), 10);
-    this.element.parentNode.style.paddingTop = `${paddingTop - 1}px`;
   },
 
   _autoHideNavigation() {
@@ -86,6 +94,9 @@ export default Component.extend({
 
   willDestroy() {
     stickyBounded = false;
+    matchNormal.addListener(this.autoDetectNavigationHeight);
+    matchTablet.addListener(this.autoDetectNavigationHeight);
+    matchMobile.addListener(this.autoDetectNavigationHeight);
     $window.off('scroll', this.autoHideNavigation);
   }
 });
