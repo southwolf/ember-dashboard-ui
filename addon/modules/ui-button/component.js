@@ -1,21 +1,18 @@
-import Ember from 'ember';
-import {htmlSafe} from 'ember-string';
+import Component from 'ember-component';
+import { htmlSafe } from 'ember-string';
 import computed from 'ember-computed';
-import {isNone} from 'ember-utils';
-
-const {Component, K} = Ember;
+import { isNone, tryInvoke } from 'ember-utils';
 
 export default Component.extend({
   tagName: 'button',
-
-  attributeBindings: ['type', 'disabled'],
-  type: 'button',
-  disabled: false,
-
   classNames: ['button'],
   classNameBindings: ['color', 'size'],
+  attributeBindings: ['type', 'disabled'],
+
   color: null,
   size: null,
+  type: 'button',
+  disabled: false,
 
   icon: null,
   iconMarkups: computed('icon', function() {
@@ -23,6 +20,7 @@ export default Component.extend({
     return isNone(icon) ? null : htmlSafe(`<i class="${icon}"></i>`);
   }),
 
-  onClick: K,
-  click() { this.onClick(...arguments) }
+  click() {
+    tryInvoke(this, 'onClick', arguments);
+  }
 }).reopenClass({positionalParams: ['text']});
