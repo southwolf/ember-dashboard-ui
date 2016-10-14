@@ -2,42 +2,40 @@ import Controller from 'ember-controller';
 
 export default Controller.extend({
   menus: [{
-    title: 'Title',
+    title: 'Product',
     items: [
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
+      { name: 'Designer', route: 'index' },
+      { name: 'Feature Index', route: 'index' },
+      { name: 'Community', route: 'index' },
+      { name: 'Plans & Pricing', route: 'index' },
+      { name: 'Templates', route: 'index' },
+      { name: 'Company', route: 'index' },
     ]
   }, {
-    title: 'Title',
+    title: 'About',
     items: [
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
+      { name: 'Blog', route: 'index' },
+      { name: 'About', route: 'index' },
+      { name: 'Jobs', route: 'index' },
+      { name: 'Terms Of Service', route: 'index' },
+      { name: 'Privacy Policy', route: 'index' },
+      { name: 'Sitemap', route: 'index' },
+      { name: 'Help & Support', route: 'index' },
     ]
   }, {
-    title: 'Title',
+    title: 'Help Docs',
     items: [
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
+      { name: 'Getting Started', route: 'index' },
+      { name: 'Tutorials', route: 'index' },
+      { name: 'Service Status', route: 'index' },
+      { name: 'Contact Support', route: 'index' },
     ]
   }, {
-    title: 'Title',
+    title: 'Social',
     items: [
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
-      { name: 'Item Name', route: 'index' },
+      { name: 'Youtube', route: 'index' },
+      { name: 'Twitter', route: 'index' },
+      { name: 'Facebook', route: 'index' },
     ]
   }]
 });

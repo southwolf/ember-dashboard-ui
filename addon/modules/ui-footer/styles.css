@@ -1,8 +1,69 @@
-@value ui-purple from 'ui-colors';
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 
 :global(.ui-footer) {
+  background-color: ui-white;
+  padding: 48px 0 64px 0;
+  border-top: 1px solid ui-fade-silver;
+  & > div {
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+    & > div {
+      &:nth-of-type(1) {
+        padding-right: 64px;
+        flex-basis: 30%;
+        @media (max-width: 991px) {
+          flex-basis: 100%;
+          padding: 0;
+          margin-bottom: 24px;
+        }
+        & p {
+          color: ui-silver;
+          margin-top: 12px;
+        }
+      }
+      &:nth-of-type(2) {
+        padding-left: 64px;
+        flex-basis: 70%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @media (max-width: 991px) {
+          flex-basis: 100%;
+          padding: 0;
+        }
+        & > div {
+          flex-basis: 25%;
+          margin-bottom: 24px;
+          @media (max-width: 767px) {
+            flex-basis: 50%;
+          }
+          & h4 {
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
   & :global(.logo) {
     fill: ui-purple;
     color: ui-purple;
+    padding: 0;
+  }
+}
+
+.link {
+  & li {
+    display: flex;
+    & a {
+      color: ui-slate;
+      padding: 8px 0;
+      transition: color 200ms ease;
+      &:hover {
+        color: ui-blue;
+      }
+    }
   }
 }

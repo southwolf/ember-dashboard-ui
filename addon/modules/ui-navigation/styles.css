@@ -20,7 +20,6 @@
 :global(.ui-navigation) > nav {
   clear: fix;
   position: relative;
-  border-bottom: 1px solid transparent;
   &:global(.primary) {
     user-select: none;
     & > div {
@@ -34,7 +33,7 @@
   &:global(.secondary) {
     padding: 16px 0;
     background-color: ui-white;
-    border-bottom-color: ui-silver;
+    border-bottom: 1px solid ui-silver;
     @media (max-width: 767px) {
       text-align: center;
     }

@@ -1,14 +1,19 @@
-{{ui-logo "Help Center" "index" class="logo"}}
+<div class="w-container{{normalClassName}}">
+  <div>
+    {{ui-logo "" "index" class="logo"}}
+    <p>{{copyright}}</p>
+  </div>
 
-<p>{{copyright}}</p>
-
-{{#each menus as |menu|}}
-  <section>
-    <h4>{{menu.title}}</h4>
-    <ul>
-      {{#each menu.items as |item|}}
-        <li>{{link-to item.name item.route}}</li>
-      {{/each}}
-    </ul>
-  </section>
-{{/each}}
+  <div>
+    {{#each menus as |menu|}}
+      <div>
+        <h4>{{menu.title}}</h4>
+        <ul local-class="link">
+          {{#each menu.items as |item|}}
+            <li>{{link-to item.name item.route}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+</div>
