@@ -4,7 +4,9 @@ import { setProperties } from 'ember-metal/set';
 export default Route.extend({
   setupController(controller) {
     this._super(...arguments);
+
     setProperties(controller, {
+      noSticky: true,
       menuOne: [
         { name: '首页', route: 'index' },
         { name: '导航', route: 'page' },
@@ -12,8 +14,8 @@ export default Route.extend({
         { name: '表单', route: 'form' },
         { name: '通知', route: 'notification' },
       ],
-      testToggle() {
-        alert('toggled!');
+      toggleSticky() {
+        this.toggleProperty('noSticky');
       }
     })
   }

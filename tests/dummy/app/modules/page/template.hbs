@@ -1,12 +1,12 @@
 <div class="main-wrapper">
-  {{#ui-navigation normal=true class="purple" as |nav|}}
+  {{#ui-navigation noSticky=noSticky normal=true class="purple" as |nav|}}
     {{#nav.primary label="Help Center" as |inner|}}
       {{inner.menu menuOne position="l"}}
       {{inner.menu position="r"}}
     {{/nav.primary}}
 
     {{#nav.secondary}}
-      Secondary Navigation
+      <button type="button" class="button" onclick={{action toggleSticky}}>Toggle Sticky</button>
     {{/nav.secondary}}
   {{/ui-navigation}}
 

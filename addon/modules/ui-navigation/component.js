@@ -2,6 +2,8 @@ import $ from 'jquery';
 import Component from 'ember-component';
 import layout from './template';
 import styles from './styles';
+import get from 'ember-metal/get';
+import getOwner from 'ember-owner/get';
 import { bind, scheduleOnce } from 'ember-runloop';
 
 let scrolling = false,
@@ -12,7 +14,7 @@ let scrolling = false,
     $window = $(window),
     matchNormal = window.matchMedia('(max-width: 991px)'),
     matchTablet = window.matchMedia('(max-width: 767px)'),
-    matchMobile = window.matchMedia('(max-width: 479px)')
+    matchMobile = window.matchMedia('(max-width: 479px)');
 
 export default Component.extend({
   layout, styles,
@@ -20,23 +22,31 @@ export default Component.extend({
   classNames: ['ui-navigation'],
   localClassNames: ['container'],
 
-  didInsertElement() {
+  didRender() {
     this._super(...arguments);
 
-    scheduleOnce('render', this, 'autoDetectWrapperHeight');
-    matchNormal.addListener(bind(this, this.autoDetectWrapperHeight, 'normal'));
-    matchTablet.addListener(bind(this, this.autoDetectWrapperHeight, 'tablet'));
-    matchMobile.addListener(bind(this, this.autoDetectWrapperHeight, 'mobile'));
+    if (get(this, 'noSticky')) {
+      this.element.style.position = 'relative';
+      this.element.parentNode.style.padding = 0;
+      return;
+    }
+
+    scheduleOnce('render', this, 'autoDetectNavigationHeight');
+    matchNormal.addListener(bind(this, this.autoDetectNavigationHeight, 'normal'));
+    matchTablet.addListener(bind(this, this.autoDetectNavigationHeight, 'tablet'));
+    matchMobile.addListener(bind(this, this.autoDetectNavigationHeight, 'mobile'));
+
+    this.element.style.position = 'fixed';
 
     if ($window.scrollTop() >= scrollOffset) {
       scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
     }
 
-    this.boundAutoHideNavigation = bind(this, this.autoHideNavigation);
-    $window.on('scroll', this.boundAutoHideNavigation);
+    this.autoHideNavigation = bind(this, this._autoHideNavigation);
+    $window.on('scroll', this.autoHideNavigation);
   },
 
-  autoDetectWrapperHeight(/*type, mql*/) {
+  autoDetectNavigationHeight(/*breakpoint, mediaQuery*/) {
     const primaryHeight = window.getComputedStyle(this.element.children[0]).height;
     this.element.style.height = primaryHeight;
 
@@ -50,7 +60,7 @@ export default Component.extend({
     this.element.parentNode.style.paddingTop = `${paddingTop - 1}px`;
   },
 
-  autoHideNavigation() {
+  _autoHideNavigation() {
     if (!scrolling) {
       scrolling = true;
       currTop = $window.scrollTop();
@@ -67,6 +77,6 @@ export default Component.extend({
   },
 
   willDestroy() {
-    $window.off('scroll', this.boundAutoHideNavigation);
+    $window.off('scroll', this.autoHideNavigation);
   }
 });
