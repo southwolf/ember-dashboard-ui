@@ -39,7 +39,12 @@ export default Component.extend({
   autoDetectWrapperHeight(/*type, mql*/) {
     const primaryHeight = window.getComputedStyle(this.element.children[0]).height;
     this.element.style.height = primaryHeight;
-    const secondaryHeight = window.getComputedStyle(this.element.children[1]).height;
+
+    let secondaryHeight = '0px';
+    if (this.element.children[1]) {
+      secondaryHeight = window.getComputedStyle(this.element.children[1]).height;
+    }
+
     const paddingTop = parseInt(primaryHeight.replace('px', ''), 10)
           + parseInt(secondaryHeight.replace('px', ''), 10);
     this.element.parentNode.style.paddingTop = `${paddingTop - 1}px`;
