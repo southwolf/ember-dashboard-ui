@@ -36,8 +36,6 @@
   }
   & span {
     line-height: 20px;
-    display: inline-block;
-    vertical-align: bottom;
   }
   &:global(.medium) {
     padding: 4px 12px;
