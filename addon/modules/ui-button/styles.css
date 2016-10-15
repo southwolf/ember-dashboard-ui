@@ -33,14 +33,19 @@
   }
   & i {
     transition: opacity 200ms ease;
+    & + span {
+      margin-left: 4px;
+    }
   }
   & span {
+    display: inline-block;
+    vertical-align: bottom;
     line-height: 20px;
   }
-  &:global(.medium) {
+  &:global(.m) {
     padding: 4px 12px;
   }
-  &:global(.small) {
+  &:global(.s) {
     padding: 2px 12px;
   }
   &:global(.white) {
@@ -118,6 +123,13 @@
       }
     }
   }
+  &:global(.transparent) {
+    color: ui-gray;
+    transition: color 200ms ease;
+    &:hover {
+      color: ui-slate;
+    }
+  }
 }
 
 :global(button.expand-more) {
@@ -137,6 +149,22 @@
     &:before {
       opacity: 1;
     }
+  }
+}
+
+:global(button.s.expand-more) {
+  padding-right: 24px;
+  &:before {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+:global(button.m.expand-more) {
+  padding-right: 28px;
+  &:before {
+    width: 28px;
+    height: 28px;
   }
 }
 
