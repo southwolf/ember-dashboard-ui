@@ -32,11 +32,12 @@
     background-color: ui-silver;
   }
   & i {
-
+    transition: opacity 200ms ease;
   }
   & span {
     line-height: 20px;
     display: inline-block;
+    vertical-align: bottom;
   }
   &:global(.medium) {
     padding: 4px 12px;
@@ -105,12 +106,18 @@
     }
   }
   &:global(.border) {
-    color: ui-gray;
+    color: ui-slate;
     box-shadow: inset ui-silver 0 0 0 1px;
     transition: box-shadow 200ms ease, color 200ms ease;
+    & i {
+      opacity: .6;
+    }
     &:hover {
       color: ui-dark-slate;
       box-shadow: inset ui-slate 0 0 0 1px;
+      & i {
+        opacity: 1;
+      }
     }
   }
 }
