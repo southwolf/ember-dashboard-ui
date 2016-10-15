@@ -10,7 +10,7 @@
   & > span {
     display: inline-block;
     vertical-align: bottom;
-    font-size: 10px;
+    font-size: 12px;
     user-select: none;
   }
 }
@@ -19,7 +19,7 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  padding: 6px 0 6px 22px;
+  padding: 10px 0 10px 22px;
   text-align: left;
 }
 
