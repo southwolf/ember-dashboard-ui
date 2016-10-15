@@ -39,7 +39,6 @@
   }
   & span {
     display: inline-block;
-    vertical-align: bottom;
     line-height: 20px;
   }
   &:global(.m) {
@@ -125,6 +124,7 @@
   }
   &:global(.transparent) {
     color: ui-gray;
+    padding-left: 0;
     transition: color 200ms ease;
     &:hover {
       color: ui-slate;
