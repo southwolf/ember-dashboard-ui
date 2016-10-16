@@ -15,18 +15,15 @@
   border-radius: radius-s;
   border: 1px solid ui-silver;
   transition: border 250ms cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
-
   &:hover {
     outline: none;
     box-shadow: inset ui-light 0 0 0 2px;
   }
-
   &:focus {
     outline: none;
     border: 1px solid ui-purple;
     box-shadow: inset color(ui-purple a(15%)) 0 0 0 2px;
   }
-
   &::-webkit-input-placeholder {
     color: ui-gray;
   }
@@ -38,11 +35,9 @@
   color: ui-gray;
   background-color: color(ui-silver a(16%));
   border: 1px solid ui-fade-silver;
-
   &:hover {
     box-shadow: none;
   }
-
   &:focus {
     box-shadow: none;
   }
@@ -54,7 +49,6 @@
     outline: none;
     box-shadow: inset ui-light 0 0 0 2px;
   }
-
   &:focus {
     outline: none;
     border: 1px solid ui-gray;
@@ -70,71 +64,57 @@
 :global(.field-control) {
   display: flex;
   flex-wrap: wrap;
-
   &:global(.row) {
     flex-flow: row nowrap;
-
     & > div {
       flex-basis: 100%;
       margin-right: spacing-m;
-
       &:last-of-type {
         margin-right: 0;
       }
     }
   }
-
   &:global(.column) {
     flex-direction: column;
   }
-
   &:global(.s) {
     flex-basis: 25%;
-
     @media (max-width: 767px) {
       flex-basis: 55%;
     }
-
     @media (max-width: 479px) {
       flex-basis: 100%;
     }
   }
-
   &:global(.m) {
     flex-basis: 55%;
-
     @media (max-width: 479px) {
       flex-basis: 100%;
     }
   }
-
   &:global(.l) {
     flex-basis: 55%;
-
     @media (max-width: 767px) {
       flex-basis: 100%;
     }
   }
-
   &:global(.xl) {
     flex-basis: 100%;
     @media (max-width: 479px) {
       flex-basis: auto;
+      width: 100%;
     }
   }
-
   &:global(.m),
   &:global(.l),
   &:global(.xl) {
     @media (max-width: 479px) {
       flex-direction: column;
-
       & > div {
         margin-right: 0;
       }
     }
   }
-
   & label {
     position: relative;
     display: inline-block;
@@ -142,7 +122,6 @@
     margin-top: spacing-m;
     user-select: none;
   }
-
   & input {
     position: relative;
     width: 100%;
@@ -164,7 +143,6 @@
   border-radius: radius-s;
   color: ui-tomato;
   background-color: color(ui-tomato a(20%));
-
   @media (max-width: 479px) {
     font-size: 12px;
   }
@@ -182,7 +160,6 @@
   flex-grow: 1;
   color: ui-gray;
   font-size: 13px;
-
   @media (max-width: 479px) {
     font-size: 12px;
   }
@@ -190,11 +167,9 @@
 
 :global(.s + .field-help) {
   flex-basis: 70%;
-
   @media (max-width: 767px) {
     flex-basis: 40%;
   }
-
   @media (max-width: 479px) {
     flex-basis: 100%;
   }
@@ -202,7 +177,6 @@
 
 :global(.m + .field-help) {
   flex-basis: 40%;
-
   @media (max-width: 479px) {
     flex-basis: 100%;
   }
@@ -210,7 +184,6 @@
 
 :global(.l + .field-help) {
   flex-basis: 40%;
-
   @media (max-width: 767px) {
     flex-basis: 100%;
   }
@@ -255,42 +228,34 @@
   & :global(.inner-wrapper) {
     position: relative;
     margin-top: spacing-m;
-
     & input {
       padding: 7px 36px;
     }
-
     & > [type=number] {
       text-align: center;
     }
-
     & > a {
       cursor: pointer;
       position: absolute;
       top: 1px;
       width: 34px;
       height: 34px;
-
       &:hover {
         & svg {
           fill: ui-dark-slate;
         }
       }
     }
-
     & > :global(.increase) {
       right: 1px;
     }
-
     & > :global(.decrease) {
       left: 1px;
     }
-
     & svg {
       fill: ui-gray;
       transition: fill 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
     }
-
     & :disabled {
       & ~ a {
         pointer-events: none;
@@ -307,11 +272,9 @@
   line-height: 34px;
   text-align: center;
   color: ui-gray;
-
   &:global(.l) {
     left: 36px;
   }
-
   &:global(.r) {
     right: 36px;
   }
@@ -322,11 +285,9 @@
   & > div {
     margin-bottom: spacing-m;
   }
-
   & input {
     display: none;
   }
-
   & label {
     &:hover {
       & :global(.checked) {
@@ -334,7 +295,6 @@
           fill: color(ui-purple s(+24%));
         }
       }
-
       & :global(.unchecked) {
         & path {
           fill: ui-gray;
@@ -342,22 +302,18 @@
       }
     }
   }
-
   & svg {
     display: inline-block;
     vertical-align: bottom;
     margin-right: spacing-xs;
-
     & path {
       transition: fill 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
     }
   }
-
   & :disabled {
     & ~ label {
       color: ui-gray;
       cursor: not-allowed;
-
       & path {
         fill: ui-gray;
       }
