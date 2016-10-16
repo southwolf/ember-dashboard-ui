@@ -28,8 +28,8 @@
   }
   &:disabled {
     cursor: not-allowed;
-    color: ui-white;
-    background-color: ui-silver;
+    color: ui-white !important;
+    background-color: ui-silver !important;
   }
   & i {
     transition: opacity 200ms ease;
