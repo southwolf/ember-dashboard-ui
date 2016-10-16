@@ -151,7 +151,7 @@
       opacity: 0;
       will-change: transform;
       transform: scaleX(0);
-      transition: transform 200ms cubic-bezier(0.47, 0, 0.745, 0.715);;
+      transition: transform 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
     }
     &:hover:before,
     &:global(.current):before {
