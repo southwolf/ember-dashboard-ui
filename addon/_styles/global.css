@@ -39,6 +39,7 @@ ul, ol {
 }
 
 a {
+  outline: none;
   text-decoration: none;
 }
 

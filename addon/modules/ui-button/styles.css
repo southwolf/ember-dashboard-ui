@@ -28,20 +28,23 @@
   }
   &:disabled {
     cursor: not-allowed;
-    color: ui-white;
-    background-color: ui-silver;
+    color: ui-white !important;
+    background-color: ui-silver !important;
   }
   & i {
-
+    transition: opacity 200ms ease;
+    & + span {
+      margin-left: 4px;
+    }
   }
   & span {
-    line-height: 20px;
     display: inline-block;
+    line-height: 20px;
   }
-  &:global(.medium) {
+  &:global(.m) {
     padding: 4px 12px;
   }
-  &:global(.small) {
+  &:global(.s) {
     padding: 2px 12px;
   }
   &:global(.white) {
@@ -105,12 +108,26 @@
     }
   }
   &:global(.border) {
-    color: ui-gray;
+    color: ui-slate;
     box-shadow: inset ui-silver 0 0 0 1px;
     transition: box-shadow 200ms ease, color 200ms ease;
+    & i {
+      opacity: .6;
+    }
     &:hover {
       color: ui-dark-slate;
       box-shadow: inset ui-slate 0 0 0 1px;
+      & i {
+        opacity: 1;
+      }
+    }
+  }
+  &:global(.transparent) {
+    color: ui-gray;
+    padding-left: 0;
+    transition: color 200ms ease;
+    &:hover {
+      color: ui-slate;
     }
   }
 }
@@ -132,6 +149,22 @@
     &:before {
       opacity: 1;
     }
+  }
+}
+
+:global(button.s.expand-more) {
+  padding-right: 24px;
+  &:before {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+:global(button.m.expand-more) {
+  padding-right: 28px;
+  &:before {
+    width: 28px;
+    height: 28px;
   }
 }
 

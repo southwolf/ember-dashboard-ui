@@ -50,6 +50,10 @@
       min-width: auto;
     }
   }
+  &:global(.lock) {
+    min-width: 1170px !important;
+    padding: 0 !important;
+  }
 }
 
 :global(.content-wrap) {

@@ -2,14 +2,15 @@
 
 :global(.switch-button) {
   cursor: pointer;
+  display: inline-block;
+  vertical-align: bottom;
   padding: 8px 0;
   color: ui-gray;
   clear: fix;
-
   & > span {
-    font-size: 10px;
-    float: left;
-    margin-right: 4px;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 12px;
     user-select: none;
   }
 }
@@ -17,14 +18,9 @@
 :global(.switch) {
   position: relative;
   display: inline-block;
-  float: left;
-  padding: 6px 0 6px 22px;
-  margin-top: 4px;
+  vertical-align: middle;
+  padding: 10px 0 10px 22px;
   text-align: left;
-
-  & > span {
-    float: left;
-  }
 }
 
 :global(.switch:before),
@@ -64,62 +60,55 @@
   transform: translate3d(100%, -50%, 0);
 }
 
-:global(.switch.large) {
-  padding: 10px 0 10px 36px;
-  margin: 0;
-
-  &:before {
-    width: 32px;
-    height: 18px;
-    border-radius: 9px;
-  }
-
-  &:after {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-:global(.switch.large.toggle-on:before) {
-  background-color: ui-green;
-}
-
-:global(.switch.small) {
-  padding: 10px 0 10px 24px;
-
-  &:before {
-    width: 12px;
-    height: 8px;
-    border-radius: 4px;
-  }
-
-  &:after {
-    width: 6px;
-    height: 6px;
-  }
-}
-
-:global(.switch.small.toggle-on:before) {
-  background-color: ui-blue;
-}
-
-:global(.switch.huge) {
+:global(.switch.xl) {
   padding: 10px 0 10px 35px;
   margin: 0;
-
   &:before {
     width: 34px;
     height: 20px;
     border-radius: 11px;
   }
-
   &:after {
     left: 1px;
     width: 16px;
     height: 16px;
   }
 }
+:global(.switch.xl.toggle-on:before) {
+  background-color: ui-blue;
+}
 
-:global(.switch.huge.toggle-on:before) {
+:global(.switch.l) {
+  padding: 10px 0 10px 36px;
+  margin: 0;
+  &:before {
+    width: 32px;
+    height: 18px;
+    border-radius: 9px;
+  }
+  &:after {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+:global(.switch.l.toggle-on:before) {
+  background-color: ui-green;
+}
+
+:global(.switch.s) {
+  padding: 10px 0 10px 24px;
+  &:before {
+    width: 12px;
+    height: 8px;
+    border-radius: 4px;
+  }
+  &:after {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+:global(.switch.s.toggle-on:before) {
   background-color: ui-blue;
 }

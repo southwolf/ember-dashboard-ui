@@ -1,9 +1,7 @@
 {{iconMarkups}}
 
-<span>
-  {{#if hasBlock}}
-    {{yield}}
-  {{else}}
-    {{text}}
-  {{/if}}
-</span>
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <span>{{text}}</span>
+{{/if}}
