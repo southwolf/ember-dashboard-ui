@@ -5,17 +5,20 @@
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
-  & i {
-    margin: 8px;
-    opacity: .6;
-    transition: opacity 200ms ease;
+  & svg {
+    fill: color(ui-dark-slate a(60%));
+    margin: 10px;
+    display: inline-block;
+    vertical-align: bottom;
+    transition: fill 200ms ease;
   }
   &:hover {
-    & i {
-      opacity: 1;
+    & svg {
+      fill: ui-dark-slate;
     }
   }
   &:global(.purple) {
+    color: ui-white;
     border-radius: 3px;
     background-color: ui-purple;
     transition: background-color 200ms ease;
@@ -24,6 +27,7 @@
     }
   }
   &:global(.blue) {
+    color: ui-white;
     border-radius: 3px;
     background-color: ui-blue;
     transition: background-color 200ms ease;
@@ -32,6 +36,7 @@
     }
   }
   &:global(.border) {
+    color: ui-white;
     border-radius: 3px;
     border: 1px solid ui-silver;
     transition: border 200ms ease;
@@ -40,6 +45,7 @@
     }
   }
   &:global(.dark) {
+    color: ui-white;
     border-radius: 3px;
     background-color: ui-slate;
     transition: background-color 200ms ease;
@@ -51,9 +57,9 @@
   &:global(.purple),
   &:global(.blue),
   &:global(.dark) {
-    & i {
-      opacity: 1;
-      margin: 2px;
+    & svg {
+      fill: currentColor;
+      margin: 4px;
     }
   }
 }

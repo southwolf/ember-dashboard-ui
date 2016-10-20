@@ -1,7 +1,11 @@
-{{iconMarkups}}
-
+{{#if icon}}
+  {{ui-icon icon=icon size=iconsize}}
+{{/if}}
 {{#if hasBlock}}
   {{yield}}
 {{else}}
   <span>{{text}}</span>
+{{/if}}
+{{#if expand}}
+  {{ui-icon icon="arrows-16px-3_small-down" size="16" style="expand"}}
 {{/if}}

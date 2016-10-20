@@ -11,19 +11,14 @@ export default Component.extend({
   tagName: 'button',
 
   classNames: ['button'],
-  classNameBindings: ['color', 'size'],
+  classNameBindings: ['color', 'size', 'iconsize'],
   attributeBindings: ['type', 'disabled'],
 
   color: null,
   size: null,
+  iconsize: 16,
   type: 'button',
   disabled: false,
-
-  icon: null,
-  iconMarkups: computed('icon', function() {
-    const icon = get(this, 'icon');
-    return icon ? htmlSafe(`<i class="${icon}"></i>`) : null;
-  }),
 
   click() {
     tryInvoke(this, 'onClick', arguments);

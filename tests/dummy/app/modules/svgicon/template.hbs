@@ -6,9 +6,7 @@
     {{#each model.svg as |item|}}
       <div local-class="wrapper">
         <div local-class="svg-container">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16">
-            <use xlink:href={{item.svgID}}></use>
-          </svg>
+          {{ui-icon icon=item.icon size='16'}}
         </div>
       </div>
     {{/each}}
