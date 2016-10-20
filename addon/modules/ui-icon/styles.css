@@ -1,0 +1,7 @@
+:global(.svgicon) {
+
+}
+
+:global(.svgicon.visible) {
+  overflow: visible;
+}
