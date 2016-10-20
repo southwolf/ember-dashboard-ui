@@ -4,7 +4,15 @@ export default Route.extend({
   model() {
     return {
       svg: [
+        {icon: "status"},
+        {icon: "eye-solid"},
+        {icon: "eye"},
+        {icon: "activity"},
+        {icon: "rocket"},
+        {icon: "wrench"},
         {icon: "brush"},
+        {icon: "trash"},
+        {icon: "trash-solid"},
         {icon: "megaphone"},
         {icon: "arrows-small-triangle-down"},
         {icon: "arrows-select"},
@@ -17,6 +25,9 @@ export default Route.extend({
         {icon: "files-folder-add"},
         {icon: "files-folder-remove"},
         {icon: "files-folder"},
+        {icon: "files-folder-solid"},
+        {icon: "files-add"},
+        {icon: "files-remove"},
         {icon: "files-single-copy"},
         {icon: "files-single-folded"},
         {icon: "files-single-folded-content"},
