@@ -16,7 +16,6 @@ export default Component.extend({
 
   color: null,
   size: null,
-  iconsize: 16,
   type: 'button',
   disabled: false,
 

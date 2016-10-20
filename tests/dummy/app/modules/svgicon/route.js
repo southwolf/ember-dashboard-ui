@@ -5,6 +5,7 @@ export default Route.extend({
     return {
       svg: [
         {icon: "brush"},
+        {icon: "megaphone"},
         {icon: "arrows-small-triangle-down"},
         {icon: "arrows-select"},
         {icon: "arrows-small-right"},
@@ -55,6 +56,7 @@ export default Route.extend({
         {icon: "ui-round-e-help"},
         {icon: "ui-round-e-info"},
         {icon: "ui-square-e-info"},
+        {icon: "ui-star-empty"},
       ]
     };
   }

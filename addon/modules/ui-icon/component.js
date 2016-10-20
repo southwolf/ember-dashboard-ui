@@ -8,6 +8,7 @@ import { tryInvoke } from 'ember-utils';
 export default Component.extend({
   layout,
   tagName: '',
+  size: 16,
 
   icon: null,
   xlink: computed('icon', function() {
