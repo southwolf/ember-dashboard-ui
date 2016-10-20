@@ -41,7 +41,6 @@ export default Route.extend({
         {icon: "media-play"},
         {icon: "shopping-bardcode-qr"},
         {icon: "shopping-cart"},
-        {icon: "ui-bell"},
         {icon: "ui-check"},
         {icon: "ui-check-simple"},
         {icon: "ui-check-small"},
@@ -76,6 +75,8 @@ export default Route.extend({
         {icon: "created-date"},
         {icon: "modification-date"},
         {icon: "status"},
+        {icon: "more"},
+        {icon: "notifications"},
       ]
     };
   }

@@ -43,8 +43,8 @@
     }
     &:hover {
       background-color: ui-light;
-      & i {
-        opacity: 1;
+      & svg {
+        fill: ui-slate;
       }
     }
     & div {
@@ -56,12 +56,12 @@
       padding: 8px 12px;
       color: ui-slate;
     }
-    & i {
-      transition: opacity 200ms ease;
-      opacity: 0.5;
+    & svg {
+      transition: fill 200ms ease;
       display: inline-block;
-      vertical-align: bottom;
+      vertical-align: sub;
       margin-right: 8px;
+      fill: ui-silver;
     }
     & span {
       display: inline-block;
