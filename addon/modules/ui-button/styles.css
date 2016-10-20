@@ -129,5 +129,5 @@
 }
 
 :global(svg.expand) {
-  margin-right: -6px;
+  margin-left: 6px;
 }
