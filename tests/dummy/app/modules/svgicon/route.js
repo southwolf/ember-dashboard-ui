@@ -4,7 +4,9 @@ export default Route.extend({
   model() {
     return {
       svg: [
-        {icon: "status"},
+        {icon: "building"},
+        {icon: "building-solid"},
+        {icon: "building-add"},
         {icon: "eye-solid"},
         {icon: "eye"},
         {icon: "activity"},
@@ -21,6 +23,8 @@ export default Route.extend({
         {icon: "design-pen"},
         {icon: "education-award"},
         {icon: "education-glasses"},
+        {icon: "arrows-system-update"},
+        {icon: "ui-disk"},
         {icon: "files-folder"},
         {icon: "files-folder-add"},
         {icon: "files-folder-remove"},
@@ -68,6 +72,10 @@ export default Route.extend({
         {icon: "ui-round-e-info"},
         {icon: "ui-square-e-info"},
         {icon: "ui-star-empty"},
+        {icon: "arrows-cloud-upload"},
+        {icon: "created-date"},
+        {icon: "modification-date"},
+        {icon: "status"},
       ]
     };
   }
