@@ -1,1 +1,1 @@
-export { default } from 'ember-cform-ui/modules/svg-icon/component';
+export { default } from 'ember-choice-ui/modules/svg-icon/component';

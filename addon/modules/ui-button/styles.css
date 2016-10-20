@@ -31,6 +31,11 @@
     color: ui-white !important;
     background-color: ui-silver !important;
   }
+  & svg {
+    display: inline-block;
+    vertical-align: sub;
+    fill: currentColor;
+  }
   & i {
     transition: opacity 200ms ease;
     & + span {
