@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('notification');
   this.route('page');
   this.route('button');
+  this.route('svgicon');
 });
 
 export default Router;
