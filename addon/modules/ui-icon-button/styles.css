@@ -1,6 +1,6 @@
 @value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 
-:global(.box-button) {
+:global(.icon-button) {
   position: relative;
   display: inline-block;
   vertical-align: middle;
