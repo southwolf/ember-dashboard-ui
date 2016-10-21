@@ -76,6 +76,7 @@ export default Route.extend({
         {icon: "modification-date"},
         {icon: "status"},
         {icon: "more"},
+        {icon: "more-horiz"},
         {icon: "notifications"},
       ]
     };
