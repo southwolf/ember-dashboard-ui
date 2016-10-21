@@ -44,7 +44,7 @@
     &:hover {
       background-color: ui-light;
       & svg {
-        fill: ui-dark-slate;
+        fill: ui-slate;
       }
     }
     & div {
@@ -61,7 +61,7 @@
       display: inline-block;
       vertical-align: sub;
       margin-right: 8px;
-      fill: color(ui-dark-slate a(64%));
+      fill: color(ui-silver a(64%));
     }
     & span {
       display: inline-block;
