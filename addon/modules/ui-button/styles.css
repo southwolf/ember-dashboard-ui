@@ -18,6 +18,9 @@
   line-height: 20px;
   &:hover {
     outline: 0;
+    & :global(svg.expand) {
+      opacity: 1;
+    }
   }
   &:active {
     border: none;
@@ -126,8 +129,9 @@
       color: ui-slate;
     }
   }
-}
-
-:global(svg.expand) {
-  margin-left: 6px;
+  & :global(svg.expand) {
+    margin-left: 6px;
+    opacity: .6;
+    transition: opacity 200ms ease;
+  }
 }

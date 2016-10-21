@@ -54,12 +54,23 @@
     }
   }
   &:global(.silver) {
-    color: ui-silver;
-    &:hover {
-      color: ui-white;
-    }
     & svg {
-      fill: currentColor;
+      fill: ui-silver;
+    }
+    &:hover {
+      & svg {
+        fill: ui-white;
+      }
+    }
+  }
+  &:global(.light) {
+    & svg {
+      fill: color(ui-white a(64%));
+    }
+    &:hover {
+      & svg {
+        fill: ui-white;
+      }
     }
   }
 
