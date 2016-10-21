@@ -1,6 +1,6 @@
 @value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
 
-:global(.box-button) {
+:global(.icon-button) {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -54,12 +54,23 @@
     }
   }
   &:global(.silver) {
-    color: ui-silver;
-    &:hover {
-      color: ui-white;
-    }
     & svg {
-      fill: currentColor;
+      fill: ui-silver;
+    }
+    &:hover {
+      & svg {
+        fill: ui-white;
+      }
+    }
+  }
+  &:global(.light) {
+    & svg {
+      fill: color(ui-white a(64%));
+    }
+    &:hover {
+      & svg {
+        fill: ui-white;
+      }
     }
   }
 

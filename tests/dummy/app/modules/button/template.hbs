@@ -25,16 +25,17 @@
   </div>
   <div class="w-container">
     <h2>UI icon Button</h2>
-      <div class="box-button">{{ui-icon size="16" icon="ui-16px-1_trash"}}</div>
-      <div class="box-button"><i class="ic dark ic-ipad-1"></i></div>
-      <div class="box-button"><i class="ic-social dark ic-weibo"></i></div>
-      <div class="box-button"><i class="ic-report dark ic-graph"></i></div>
-      <div class="box-button"><i class="ic-report dark ic-gauge"></i></div>
-      <div class="box-button"><i class="ic dark ic-trophy-1"></i></div>
-      <div class="box-button purple"><i class="ic light ic-plus-1"></i></div>
-      <div class="box-button blue"><i class="ic light ic-plus-1"></i></div>
-      <div class="box-button dark">{{ui-icon size="16" icon="ui-16px-1_simple-add"}}</div>
-      <div class="box-button border">{{ui-icon size="16" icon="ui-16px-1_simple-add"}}</div>
+    {{ui-icon-button icon="building" color="blue"}}
+    <div class="box-button">{{ui-icon size="16" icon="ui-16px-1_trash"}}</div>
+    <div class="box-button"><i class="ic dark ic-ipad-1"></i></div>
+    <div class="box-button"><i class="ic-social dark ic-weibo"></i></div>
+    <div class="box-button"><i class="ic-report dark ic-graph"></i></div>
+    <div class="box-button"><i class="ic-report dark ic-gauge"></i></div>
+    <div class="box-button light">{{ui-icon icon="files-single-copy"}}</div>
+    <div class="box-button purple"><i class="ic light ic-plus-1"></i></div>
+    <div class="box-button blue"><i class="ic light ic-plus-1"></i></div>
+    <div class="box-button dark">{{ui-icon size="16" icon="ui-16px-1_simple-add"}}</div>
+    <div class="box-button border">{{ui-icon size="16" icon="ui-16px-1_simple-add"}}</div>
   </div>
   <div class="w-container">
     <h2>UI Switch</h2>
@@ -47,35 +48,36 @@
     <h2>UI Menu</h2>
     {{#basic-dropdown as |dropdown|}}
       {{#dropdown.trigger}}
-    		{{ui-button "Dropdown Button Sample" color="border expand-more ic-dark" icon="ic dark ic-right-square-1" disabled=""}}
+        {{ui-button "Dropdown Button Sample" color="border" icon="ui-grid-square" expand=true}}
       {{/dropdown.trigger}}
       {{#dropdown.content}}
         <ul class="option checkmark">
-            <div class="optgroup">Optgroup Sample</div>
-            <ul class="option-contents">
-         		<li>
-                <a>
-                    <i class="ic dark ic-target-1"></i>
-                    <span>Sample Text</span>
-                </a>
-          	</li>
-              <li>
-                <a>
-                  <i class="ic dark ic-target-1"></i>
-                  <span>Sample Text</span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <i class="ic dark ic-target-1"></i>
-                  <span>Sample Text</span>
-                </a>
-              </li>
+          <div class="optgroup">Optgroup Sample</div>
+          <ul class="option-contents">
+            <li>
+              <a>
+                {{ui-icon icon="ui-check" style="checkmark"}}
+                {{ui-icon icon="files-add"}}
+                <span>Sample Text</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                {{ui-icon icon="files-add"}}
+                <span>Sample Text</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                {{ui-icon icon="files-add"}}
+                <span>Sample Text</span>
+              </a>
+            </li>
           </ul>
           <ul class="option-control">
             <li>
               <a>
-                <i class="ic dark ic-plus-1"></i>
+                {{ui-icon icon="files-add"}}
                 <span>Add New Sample</span>
               </a>
             </li>
