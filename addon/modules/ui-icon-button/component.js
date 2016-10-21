@@ -11,7 +11,7 @@ export default Component.extend({
   tagName: 'a',
 
   classNames: ['icon-button'],
-  classNameBindings: ['color', 'size', 'style'],
+  classNameBindings: ['color'],
   attributeBindings: ['disabled'],
 
   color: null,
