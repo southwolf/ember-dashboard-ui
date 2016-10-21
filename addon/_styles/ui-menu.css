@@ -61,7 +61,7 @@
       display: inline-block;
       vertical-align: sub;
       margin-right: 8px;
-      fill: color(ui-silver a(64%));
+      fill: color(ui-slate a(48%));
     }
     & span {
       display: inline-block;

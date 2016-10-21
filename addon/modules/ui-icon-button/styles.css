@@ -65,7 +65,7 @@
   }
   &:global(.light) {
     & svg {
-      fill: color(ui-white a(64%));
+      fill: color(ui-white a(72%));
     }
     &:hover {
       & svg {
@@ -73,7 +73,6 @@
       }
     }
   }
-
   &:global(.purple),
   &:global(.blue),
   &:global(.dark) {
