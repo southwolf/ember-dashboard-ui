@@ -19,7 +19,4 @@ export default Component.extend({
   type: 'button',
   disabled: false,
 
-  click() {
-    tryInvoke(this, 'onClick', arguments);
-  }
 }).reopenClass({positionalParams: ['text']});
