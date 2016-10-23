@@ -120,6 +120,9 @@
   &:global(.blank) {
     color: ui-silver;
     transition: color 200ms ease;
+    & :global(svg.expand) {
+      fill: ui-slate;
+    }
     &:hover {
       color: ui-gray;
     }
