@@ -21,6 +21,10 @@
     width: 100%;
     text-align: left;
   }
+  & :global(.expand) {
+    float: right;
+    height: 20px;
+  }
 }
 
 :global(.option) {

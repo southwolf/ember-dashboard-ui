@@ -42,10 +42,6 @@
       margin-left: 4px;
     }
   }
-  & span {
-    display: inline-block;
-    line-height: 20px;
-  }
   &:global(.m) {
     padding: 4px 12px;
   }
@@ -53,7 +49,12 @@
     padding: 2px 12px;
   }
   &:global(.white) {
+    color: ui-slate;
     background-color: ui-white;
+    transition: color 200ms ease;
+    &:hover {
+      color: ui-dark-slate;
+    }
   }
   &:global(.blue) {
     color: ui-white;
