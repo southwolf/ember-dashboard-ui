@@ -130,6 +130,7 @@
     }
   }
   & :global(svg.expand) {
+    float: right;
     margin-left: 6px;
     opacity: .6;
     transition: opacity 200ms ease;
