@@ -50,11 +50,6 @@
   }
   &:global(.white) {
     color: ui-slate;
-    background-color: ui-white;
-    transition: color 200ms ease;
-    &:hover {
-      color: ui-dark-slate;
-    }
   }
   &:global(.blue) {
     color: ui-white;
@@ -120,6 +115,13 @@
     &:hover {
       color: ui-dark-slate;
       box-shadow: inset ui-slate 0 0 0 1px;
+    }
+  }
+  &:global(.blank) {
+    color: ui-silver;
+    transition: color 200ms ease;
+    &:hover {
+      color: ui-gray;
     }
   }
   &:global(.transparent) {
