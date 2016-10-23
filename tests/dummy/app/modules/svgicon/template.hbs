@@ -2,16 +2,50 @@
 {{ui-notification}}
 
 <div class="w-container normal">
-  <h1 local-class="icon-title">SVG icon Preview</h1>
+  <h1 local-class="icon-title">Dashboard icon Preview</h1>
   <div local-class="svg-icon">
-    {{#each model.svg as |item|}}
+    {{#each model.dashboard as |item|}}
       <div local-class="wrapper">
         <div local-class="svg-container"
              onmouseenter={{action "showHref"}}
              onmouseleave={{action "hideHref"}}
              onclick={{action "copyHref"}}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width={{size}} height={{size}} viewBox="0 0 16 16">
+          <svg class={{concat 'svgicon ' item.style}} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width={{size}} height={{size}} viewBox="0 0 16 16">
+            <use xlink:href="{{concat "#" item.icon}}"></use>
+          </svg>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <h1 local-class="icon-title">Reports icon Preview</h1>
+  <div local-class="svg-icon">
+    {{#each model.reports as |item|}}
+      <div local-class="wrapper">
+        <div local-class="svg-container"
+             onmouseenter={{action "showHref"}}
+               onmouseleave={{action "hideHref"}}
+             onclick={{action "copyHref"}}
+        >
+          <svg class={{concat 'svgicon ' item.style}} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width={{size}} height={{size}} viewBox="0 0 16 16">
+            <use xlink:href="{{concat "#" item.icon}}"></use>
+          </svg>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <h1 local-class="icon-title">Social icon Preview</h1>
+  <div local-class="svg-icon">
+    {{#each model.social as |item|}}
+      <div local-class="wrapper">
+        <div local-class="svg-container"
+             onmouseenter={{action "showHref"}}
+               onmouseleave={{action "hideHref"}}
+             onclick={{action "copyHref"}}
+        >
+          <svg class={{concat 'svgicon ' item.style}} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width={{size}} height={{size}} viewBox="0 0 16 16">
             <use xlink:href="{{concat "#" item.icon}}"></use>
           </svg>
         </div>
