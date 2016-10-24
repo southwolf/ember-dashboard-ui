@@ -7,7 +7,7 @@ import { htmlSafe } from 'ember-string';
 import { tryInvoke } from 'ember-utils';
 
 export default Component.extend({
-  classNameBindings: ['tips'],
+  attributeBindings: ['tips'],
 
   layout, styles,
   tagName: '',
