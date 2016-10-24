@@ -11,11 +11,12 @@ export default Component.extend({
   tagName: 'button',
 
   classNames: ['button'],
-  classNameBindings: ['color', 'size', 'iconsize'],
+  classNameBindings: ['color', 'size', 'iconsize', 'tips'],
   attributeBindings: ['type', 'disabled'],
 
   color: null,
   size: null,
+  tips: null,
   type: 'button',
   disabled: false,
 
