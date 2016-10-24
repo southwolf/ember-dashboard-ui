@@ -12,11 +12,12 @@ export default Component.extend({
 
   classNames: ['icon-button'],
   classNameBindings: ['color'],
-  attributeBindings: ['disabled', 'href'],
+  attributeBindings: ['disabled', 'href', 'tips:data-tips'],
 
   color: null,
   size: "16",
   style: null,
+  tips: null,
   href: null,
   disabled: false,
 

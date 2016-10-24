@@ -12,7 +12,7 @@ export default Component.extend({
 
   classNames: ['button'],
   classNameBindings: ['color', 'size', 'iconsize'],
-  attributeBindings: ['type', 'disabled', 'tips'],
+  attributeBindings: ['type', 'disabled', 'tips:data-tips'],
 
   color: null,
   size: null,

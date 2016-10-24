@@ -7,12 +7,9 @@ import { htmlSafe } from 'ember-string';
 import { tryInvoke } from 'ember-utils';
 
 export default Component.extend({
-  attributeBindings: ['tips'],
-
   layout, styles,
   tagName: '',
   size: 16,
-  tips: null,
 
   icon: null,
   xlink: computed('icon', function() {
