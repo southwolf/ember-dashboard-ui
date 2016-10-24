@@ -1,0 +1,57 @@
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
+
+:global([data-tips]:after),
+:global([data-tips]:before) {
+  z-index: 100;
+  visibility: hidden;
+  transition: 200ms ease;
+  transition-delay: 0ms;
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  opacity: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:global([data-tips]:after) {
+  font-size: 12px !important;
+  line-height: 12px !important;
+  position: absolute;
+  left: -16%;
+  padding: 3px 6px 4px 6px;
+  white-space: nowrap;
+  color: ui-white;
+  border-radius: 2px;
+  background: ui-slate;
+  text-shadow: 0 -1px 0px color(black a(30%));
+  box-shadow: 0 4px 8px color(black a(30%));
+}
+
+:global([data-tips]:after) {
+  content: attr(data-tips);
+  top: 100%;
+}
+
+:global([data-tips]:before) {
+  position: absolute;
+  z-index: 101;
+  left: 50%;
+  margin-left: -6px;
+  content: '';
+  border: 6px solid transparent;
+  background: transparent;
+}
+
+:global([data-tips]:before) {
+  top: 100%;
+  margin-top: -12px;
+  border-bottom-color: ui-slate;
+}
+
+:global([data-tips]:hover:after),
+:global([data-tips]:hover:before) {
+  visibility: visible;
+  transition-delay: 800ms;
+  transform: translateY(8px);
+  opacity: 1;
+}
