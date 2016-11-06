@@ -5,7 +5,7 @@
 /tmp
 /typings
 **/.gitkeep
-**/.placeholder
+!/addon/styles/.gitkeep
 .bowerrc
 .csscomb.json
 .editorconfig
