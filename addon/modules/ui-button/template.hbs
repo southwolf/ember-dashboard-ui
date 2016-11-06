@@ -7,5 +7,9 @@
   <span>{{text}}</span>
 {{/if}}
 {{#if expand}}
-  {{ui-icon icon="arrows-small-down" style="expand"}}
+  {{#if half}}
+    {{ui-icon icon="arrows-half-down" style="half-expand"}}
+    {{else}}
+    {{ui-icon icon="arrows-small-down" style="expand"}}
+  {{/if}}
 {{/if}}

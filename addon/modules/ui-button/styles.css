@@ -137,6 +137,9 @@
   }
   & :global(svg.expand) {
     margin-left: 6px;
+  }
+  & :global(svg.expand),
+  & :global(svg.half-expand) {
     opacity: .6;
     transition: opacity 200ms ease;
   }
