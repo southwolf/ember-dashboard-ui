@@ -131,6 +131,7 @@ export default Route.extend({
         {icon: "education-glasses"},
         {icon: "ui-eye"},
         {icon: "ui-eye-ban"},
+        {icon: "drag"},
       ],
       social: [
         {icon: "social-facebook"},
