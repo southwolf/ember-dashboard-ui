@@ -96,6 +96,7 @@
   vertical-align: bottom;
   z-index: calc(ui-menu +1);
   & svg {
+    pointer-events: none;
     height: 20px;
     display: inline-block;
     vertical-align: bottom;

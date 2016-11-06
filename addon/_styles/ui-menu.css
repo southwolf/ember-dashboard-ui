@@ -61,15 +61,16 @@
       color: ui-slate;
     }
     & svg {
+      pointer-events: none;
       transition: fill 200ms ease;
       display: inline-block;
-      vertical-align: sub;
+      vertical-align: middle;
       margin-right: 8px;
       fill: color(ui-slate a(48%));
     }
     & span {
       display: inline-block;
-      vertical-align: bottom;
+      vertical-align: middle;
       line-height: 20px;
     }
   }

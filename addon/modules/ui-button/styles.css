@@ -35,8 +35,9 @@
     background-color: ui-silver !important;
   }
   & svg {
+    pointer-events: none;
     display: inline-block;
-    vertical-align: sub;
+    vertical-align: middle;
     fill: currentColor;
     & + span {
       margin-left: 4px;

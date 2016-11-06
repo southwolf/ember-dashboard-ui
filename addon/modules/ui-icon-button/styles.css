@@ -6,6 +6,7 @@
   vertical-align: middle;
   cursor: pointer;
   & svg {
+    pointer-events: none;
     fill: color(ui-dark-slate a(60%));
     margin: 10px;
     display: inline-block;

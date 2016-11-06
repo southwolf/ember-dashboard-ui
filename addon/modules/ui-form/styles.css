@@ -253,6 +253,7 @@
       left: 1px;
     }
     & svg {
+      pointer-events: none;
       fill: ui-gray;
       transition: fill 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
     }
@@ -303,6 +304,7 @@
     }
   }
   & svg {
+    pointer-events: none;
     display: inline-block;
     vertical-align: bottom;
     margin-right: spacing-xs;
