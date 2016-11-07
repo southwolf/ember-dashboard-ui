@@ -3,8 +3,11 @@ const ChoiceUI = require('./index.js').options;
 const options = {
   cssModules: ChoiceUI.cssModules,
   nodeAssets: Object.assign({}, ChoiceUI, {
-    ['clipboard']: {
+    clipboard: {
       import: ['dist/clipboard.js']
+    },
+    faker: {
+      import: ['build/build/faker.js']
     }
   })
 };
@@ -12,5 +15,6 @@ const options = {
 module.exports = function(defaults) {
   const app = new EmberAddon(defaults, options);
   app.import('vendor/shims/clipboard.js');
+  app.import('vendor/shims/faker.js');
   return app.toTree();
 };
