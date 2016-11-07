@@ -1,7 +1,3 @@
-:global(.svgicon) {
-
-}
-
-:global(.svgicon.visible) {
+:global(svg.svgicon):not(:root) {
   overflow: visible;
 }

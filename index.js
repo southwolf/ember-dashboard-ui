@@ -28,10 +28,11 @@ module.exports = {
           'ui-green': '#2ecc71',
           'ui-tomato': '#e74c3c',
           'ui-golden': '#f1c40f',
-          'ui-light': 'color(#bdc3c7 a(24%))',
-          'ui-fade-silver': 'color(#bdc3c7 a(48%))',
+          'ui-light': 'color(#bdc3c7 a(25%))',
+          'ui-fade-silver': 'color(#bdc3c7 a(50%))',
           'ui-silver': '#bdc3c7',
           'ui-gray': '#919ba2',
+          'ui-fade-slate': 'color(#4e5b68 a(60%))',
           'ui-slate': '#4e5b68',
           'ui-dark-slate': '#34495e'
         },
