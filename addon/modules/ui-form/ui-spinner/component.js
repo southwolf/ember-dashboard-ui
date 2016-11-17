@@ -70,7 +70,7 @@ export default Component.extend({
 
       if (get(this, 'isValidToMax')) {
         const step = get(this, 'step');
-        const value = get(this, 'value');
+        const value = +get(this, 'value');
 
         if (get(this, 'normalized')) {
           set(this, 'value', value + step);
