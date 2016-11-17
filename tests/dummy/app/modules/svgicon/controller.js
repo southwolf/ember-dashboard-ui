@@ -15,10 +15,10 @@ export default Controller.extend({
       this.set('hrefText', '');
     },
 
-    copyHref(event) {
+    copyHref() {
       const result = this.get('hrefText').replace('#', '');
       this.clipboard = new Clipboard(document.body, {
-        text(trigger) { return result}
+        text() { return result }
       });
       this.notification.success(`Copy to clipboard:&nbsp;<strong>${result}</strong>`);
     }

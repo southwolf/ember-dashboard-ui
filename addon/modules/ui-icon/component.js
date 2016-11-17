@@ -4,7 +4,6 @@ import styles from './styles';
 import computed from 'ember-computed';
 import get from 'ember-metal/get';
 import { htmlSafe } from 'ember-string';
-import { tryInvoke } from 'ember-utils';
 
 export default Component.extend({
   layout, styles,
