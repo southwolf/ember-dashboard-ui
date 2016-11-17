@@ -3,7 +3,7 @@ import layout from './template';
 import styles from './styles';
 import computed from 'ember-computed';
 import get from 'ember-metal/get';
-import { isBlank, tryInvoke } from 'ember-utils';
+import { isBlank } from 'ember-utils';
 
 export default Component.extend({
   layout, styles,

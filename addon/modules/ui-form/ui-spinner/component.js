@@ -1,7 +1,7 @@
 import Component from 'ember-component';
 import layout from './template';
 import computed, { reads } from 'ember-computed';
-import { isPresent } from 'ember-utils';
+import { isPresent, tryInvoke } from 'ember-utils';
 import { htmlSafe } from 'ember-string';
 import get from 'ember-metal/get';
 import set from 'ember-metal/set';
@@ -78,6 +78,8 @@ export default Component.extend({
           set(this, 'value', value + (step - value % step));
         }
       }
+
+      tryInvoke(this, "onInput");
     },
 
     decrease() {
@@ -93,6 +95,8 @@ export default Component.extend({
           set(this, 'value', value - value % step);
         }
       }
+
+      tryInvoke(this, "onInput");
     }
   }
 });
