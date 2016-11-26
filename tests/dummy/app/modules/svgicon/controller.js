@@ -8,7 +8,8 @@ export default Controller.extend({
 
   actions: {
     showHref(event) {
-      this.set('hrefText', event.target.querySelector('use').getAttribute('xlink:href'));
+      this.set('hrefText',
+        event.target.querySelector('use').getAttribute('xlink:href'));
     },
 
     hideHref() {
@@ -20,7 +21,8 @@ export default Controller.extend({
       this.clipboard = new Clipboard(document.body, {
         text() { return result }
       });
-      this.notification.success(`Copy to clipboard:&nbsp;<strong>${result}</strong>`);
+      this.notification.success(
+        `Copy to clipboard:&nbsp;<strong>${result}</strong>`);
     }
   }
 });

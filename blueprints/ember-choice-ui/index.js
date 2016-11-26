@@ -1,4 +1,4 @@
-var RSVP = require('rsvp');
+const RSVP = require('rsvp');
 
 module.exports = {
   name: 'ember-choice-ui',
@@ -8,16 +8,21 @@ module.exports = {
 
   afterInstall() {
     return RSVP.allSettled([
-      // Build same style system for consuming applications
-      this.addAddonToProject({ name: 'ember-css-modules' }),
       this.addPackagesToProject([
-        {name: 'postcss-import'},
-        {name: 'postcss-extend'},
-        {name: 'postcss-cssnext'},
-        {name: 'postcss-fallback'},
-        {name: 'rucksack-css'},
-        {name: 'postcss-browser-reporter'}
-      ])
+        { name: 'postcss-import' },
+        { name: 'postcss-extend' },
+        { name: 'postcss-cssnext' },
+        { name: 'postcss-fallback' },
+        { name: 'rucksack-css' },
+        { name: 'postcss-browser-reporter' }
+      ]),
+      this.addAddonsToProject({
+        packages: [
+          { name: 'ember-css-modules', target: '^0.6.0' },
+          { name: 'ember-cli-node-assets', target: '^0.1.0' }
+        ],
+        blueprintOptions: { saveDev: true }
+      })
     ]);
   }
 };

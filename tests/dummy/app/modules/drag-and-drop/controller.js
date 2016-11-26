@@ -1,5 +1,3 @@
-/* eslint no-console: 0 */
-
 import Controller from 'ember-controller';
 import { A } from 'ember-array/utils';
 
@@ -16,6 +14,7 @@ export default Controller.extend({
     { id: 5, name: 'Alexis Castle', gender: '㊛' }
   ]),
   actions: {
+    /*
     process(content, options) {
       console.log(content, options);
     },
@@ -43,5 +42,6 @@ export default Controller.extend({
     sortEnd(event) {
       console.log('sort end: ', event);
     }
+  */
   }
 });
