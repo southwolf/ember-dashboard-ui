@@ -9,6 +9,7 @@ export default Component.extend({
   layout, styles,
   tagName: '',
   size: 16,
+  viewBox: 16,
 
   icon: null,
   xlink: computed('icon', function() {
