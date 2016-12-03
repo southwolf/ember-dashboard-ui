@@ -34,7 +34,8 @@ module.exports = {
           'ui-gray': '#919ba2',
           'ui-fade-slate': 'color(#4e5b68 a(60%))',
           'ui-slate': '#4e5b68',
-          'ui-dark-slate': '#34495e'
+          'ui-dark-slate': '#34495e',
+          'cadillac-red': '#862838'
         },
         'ui-radius': {
           'radius-s': '2px',
