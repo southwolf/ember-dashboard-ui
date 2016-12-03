@@ -143,6 +143,22 @@ export default Route.extend({
         {icon: "social-weibo"},
         {icon: "social-qq"},
         {icon: "social-wechat"},
+      ],
+      min: [
+        {icon: "min-trash"},
+        {icon: "min-duplicate"},
+        {icon: "min-close"},
+        {icon: "min-menu"},
+        {icon: "min-check"},
+        {icon: "min-prompt"},
+        {icon: "min-question"},
+        {icon: "min-edit"},
+        {icon: "min-trash"},
+        {icon: "min-warning"},
+        {icon: "min-folder"},
+        {icon: "min-drag"},
+        {icon: "min-size"},
+        {icon: "min-setting"},
       ]
     };
   }
