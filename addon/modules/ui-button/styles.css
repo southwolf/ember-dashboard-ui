@@ -55,6 +55,13 @@
   &:global(.white) {
     color: ui-slate;
   }
+  &:global(.light) {
+    color: color(ui-white a(60%));
+    transition: color 200ms ease;
+    &:hover {
+      color: ui-white;
+    }
+  }
   &:global(.blue) {
     color: ui-white;
     background-color: ui-blue;
