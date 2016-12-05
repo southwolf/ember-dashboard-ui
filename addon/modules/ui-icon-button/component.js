@@ -17,6 +17,7 @@ export default Component.extend({
   tips: null,
   href: null,
   disabled: false,
+  viewBox: 16,
 
   click() {
     tryInvoke(this, 'onClick', arguments);
