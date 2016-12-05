@@ -9,7 +9,7 @@ export default Controller.extend({
     },
 
     onClick() {
-      this.toggleProperty('isShow');
+      // this.toggleProperty('isShow');
     }
   }
 });

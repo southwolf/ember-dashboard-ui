@@ -11,6 +11,11 @@ export default Component.extend({
       if (e.target.className.includes(styles['static-background']) && !this.get('important')) {
         this.get('closePopup')();
       }
+    },
+
+    clickConfirmButton() {
+      this.get('onClick')();
+      this.get('closePopup')();
     }
   }
 });

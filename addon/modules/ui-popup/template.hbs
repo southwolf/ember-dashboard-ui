@@ -12,7 +12,7 @@
       {{#if onClick}}
         <div local-class="popup-footer">
           {{ui-button cancelText color="border" onClick=closePopup}}
-          {{ui-button confirmText color=color onClick=onClick}}
+          {{ui-button confirmText color=color onClick=(action "clickConfirmButton")}}
         </div>
       {{/if}}
     </div>
