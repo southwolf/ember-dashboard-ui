@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('page');
   this.route('button');
   this.route('svgicon');
+  this.route('popup');
 });
 
 export default Router;
