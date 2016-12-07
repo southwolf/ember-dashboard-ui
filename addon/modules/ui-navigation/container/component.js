@@ -25,5 +25,9 @@ export default Component.extend({
   }),
 
   isPrimary: equal('level', 'primary'),
-  isSecondary: equal('level', 'secondary')
+  isSecondary: equal('level', 'secondary'),
+  showLogo: true,
+  hasLogo: computed('isPrimary', 'showLogo', function() {
+    return get(this, 'isPrimary') && get(this, 'showLogo');
+  }).readOnly()
 }).reopenClass({ positionalParams: ['level'] });
