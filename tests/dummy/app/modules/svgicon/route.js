@@ -85,6 +85,10 @@ export default Route.extend({
         {icon: "status"},
         {icon: "notifications"},
         {icon: "menu"},
+        {icon: "video"},
+        {icon: "tips"},
+        {icon: "print"},
+        {icon: "chat"},
       ],
       reports: [
         {icon: "ui-filter"},
