@@ -7,7 +7,7 @@
   display: none;
 }
 
-:global(textarea),
+:global(textarea),œ
 :global(input) {
   line-height: inherit;
   padding: 7px 12px;
