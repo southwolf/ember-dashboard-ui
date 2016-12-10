@@ -29,35 +29,30 @@ export default Component.extend({
   },
 
   didRender() {
-    this._super(...arguments);
-
     if (get(this, 'noSticky')) {
+      this.element.style.height = 'auto';
       this.element.style.position = 'relative';
       this.element.parentNode.style.padding = 0;
 
-      // remove mediaQueryList listeners
       matchNormal.addListener(this.autoDetectNavigationHeight);
       matchTablet.addListener(this.autoDetectNavigationHeight);
       matchMobile.addListener(this.autoDetectNavigationHeight);
 
-      // if already bounded, not to listen scroll event any longer
       if (stickyBounded) $window.off('scroll', this.autoHideNavigation);
       stickyBounded = false;
+    } else {
+      scheduleOnce('render', this, 'autoDetectNavigationHeight');
+      matchNormal.addListener(this.autoDetectNavigationHeight);
+      matchTablet.addListener(this.autoDetectNavigationHeight);
+      matchMobile.addListener(this.autoDetectNavigationHeight);
 
-      return;
+      this.element.style.position = 'fixed';
+      if ($window.scrollTop() >= scrollOffset) {
+        this.element.classList.add('sticky');
+      }
+      $window.on('scroll', this.autoHideNavigation);
+      stickyBounded = true;
     }
-
-    scheduleOnce('render', this, 'autoDetectNavigationHeight');
-    matchNormal.addListener(this.autoDetectNavigationHeight);
-    matchTablet.addListener(this.autoDetectNavigationHeight);
-    matchMobile.addListener(this.autoDetectNavigationHeight);
-
-    this.element.style.position = 'fixed';
-    if ($window.scrollTop() >= scrollOffset) {
-      scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
-    }
-    $window.on('scroll', this.autoHideNavigation);
-    stickyBounded = true;
   },
 
   _autoDetectNavigationHeight(/*breakpoint, mediaQuery*/) {
@@ -82,9 +77,9 @@ export default Component.extend({
       currTop = $window.scrollTop();
 
       if (currTop - prevTop > scrollDelta && currTop > scrollOffset) {
-        scheduleOnce('afterRender', this.element.classList, 'add', 'sticky');
+        this.element.classList.add('sticky')
       } else if (prevTop - currTop > scrollDelta) {
-        scheduleOnce('afterRender', this.element.classList, 'remove', 'sticky');
+        this.element.classList.remove('sticky')
       }
 
       prevTop = currTop;

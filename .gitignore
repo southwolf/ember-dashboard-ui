@@ -18,5 +18,5 @@
 /libpeerconnection.log
 /typings
 jsconfig.json
-npm-debug.log
+npm-debug.log*
 testem.log

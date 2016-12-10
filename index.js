@@ -18,7 +18,6 @@ module.exports = {
         require('postcss-sassy-mixins'),
         require('rucksack-css')({ alias: false, hexRGBA: false, fallbacks: true }),
         require('postcss-cssnext'),
-        require('postcss-browser-reporter')
       ],
       virtualModules: {
         'ui-colors': {
