@@ -11,6 +11,7 @@ export default Route.extend({
         {icon: "ui-simple-remove"},
         {icon: "ui-small-add"},
         {icon: "ui-small-delete"},
+        {icon: "ui-middle-remove"},
         {icon: "ui-small-remove"},
         {icon: "ui-check-simple"},
         {icon: "ui-check"},
