@@ -89,7 +89,7 @@ export default Route.extend({
         {icon: "tips"},
         {icon: "print"},
         {icon: "chat"},
-        {icon: "log-out"},
+        {icon: "delivery"},
       ],
       reports: [
         {icon: "ui-filter"},
