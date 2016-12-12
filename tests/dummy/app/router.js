@@ -15,6 +15,13 @@ Router.map(function() {
   this.route('button');
   this.route('svgicon');
   this.route('popup');
+
+  this.route('foo', function() {
+    this.route('one')
+    this.route('two')
+  })
+
+  this.route('baz')
 });
 
 export default Router;

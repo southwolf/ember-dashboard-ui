@@ -32,7 +32,7 @@ export default Component.extend({
     if (get(this, 'noSticky')) {
       this.element.style.height = 'auto';
       this.element.style.position = 'relative';
-      this.element.parentNode.style.padding = 0;
+      this.element.parentNode.style.paddingTop = 0;
 
       matchNormal.addListener(this.autoDetectNavigationHeight);
       matchTablet.addListener(this.autoDetectNavigationHeight);
@@ -53,6 +53,8 @@ export default Component.extend({
       $window.on('scroll', this.autoHideNavigation);
       stickyBounded = true;
     }
+
+    this._parentNode = this.element.parentNode;
   },
 
   _autoDetectNavigationHeight(/*breakpoint, mediaQuery*/) {
@@ -89,9 +91,10 @@ export default Component.extend({
 
   willDestroy() {
     stickyBounded = false;
-    matchNormal.addListener(this.autoDetectNavigationHeight);
-    matchTablet.addListener(this.autoDetectNavigationHeight);
-    matchMobile.addListener(this.autoDetectNavigationHeight);
+    if (this._parentNode) this._parentNode.style.paddingTop = 0;
+    matchNormal.removeListener(this.autoDetectNavigationHeight);
+    matchTablet.removeListener(this.autoDetectNavigationHeight);
+    matchMobile.removeListener(this.autoDetectNavigationHeight);
     $window.off('scroll', this.autoHideNavigation);
   }
 });

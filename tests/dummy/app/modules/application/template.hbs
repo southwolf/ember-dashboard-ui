@@ -1,5 +1,24 @@
-{{outlet}}
-{{svg-icon/dashboard-icon}}
-{{svg-icon/reports-icon}}
-{{svg-icon/share-icon}}
-{{svg-icon/min-icon}}
+<div class="main-wrapper">
+  {{#if hasNavigation}}
+    {{#ui-navigation normal=normal class="purple" as |nav|}}
+
+      {{#nav.primary showLogo=showLogo as |inner|}}
+        {{#if defaultMenu}}
+          {{inner.menu menu position="l"}}
+        {{else}}
+          {{outlet "primary"}}
+        {{/if}}
+
+      {{/nav.primary}}
+
+      {{#if secondaryNav}}
+        {{#nav.secondary}}
+          {{outlet "secondary"}}
+        {{/nav.secondary}}
+      {{/if}}
+
+    {{/ui-navigation}}
+  {{/if}}
+
+  {{outlet}}
+</div>
