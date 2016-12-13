@@ -12,7 +12,7 @@ module.exports = {
     },
     cssModules: {
       plugins: [
-        require('postcss-import'),
+        require('postcss-import')({ path: './addon/styles' }),
         require('postcss-extend'),
         require('postcss-fallback'),
         require('postcss-sassy-mixins'),

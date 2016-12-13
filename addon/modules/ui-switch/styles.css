@@ -1,4 +1,4 @@
-@value ui-white, ui-gary, ui-blue, ui-green, ui-purple, ui-silver from 'ui-colors';
+@value ui-white, ui-gray, ui-blue, ui-green, ui-purple, ui-silver from 'ui-colors';
 
 :global(.switch-button) {
   cursor: pointer;

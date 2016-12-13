@@ -1,5 +1,4 @@
-@import "./extend.css";
-@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
+@import "extend.css";
 
 /* {{ui-draggable}} Cursors */
 :global(.ui-draggable.draggable),
