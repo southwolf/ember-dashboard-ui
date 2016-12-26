@@ -10,7 +10,13 @@
         <h4>{{menu.title}}</h4>
         <ul local-class="link">
           {{#each menu.items as |item|}}
-            <li>{{link-to item.name item.route}}</li>
+            <li>
+              {{#if item.external}}
+                <a href={{item.route}}>{{item.name}}</a>
+              {{else}}
+                {{link-to item.name item.route}}
+              {{/if}}
+            </li>
           {{/each}}
         </ul>
       </div>
