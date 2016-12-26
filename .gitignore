@@ -118,3 +118,10 @@ Icon\r\r
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/bower_components
