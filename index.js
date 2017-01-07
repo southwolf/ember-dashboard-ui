@@ -68,6 +68,12 @@ module.exports = {
   },
 
   isDevelopingAddon() {
-    return 'development' === process.env.EMBER_ENV;
+    return 'production' !== process.env.EMBER_ENV;
+  },
+
+  included(target) {
+    this._super.included.apply(this, arguments)
+    target.import('bower_components/device.js/lib/device.js')
+    target.import('vendor/shims/device.js')
   }
 };

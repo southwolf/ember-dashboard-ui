@@ -1,7 +1,8 @@
 {
   "name": "ember-choice-ui",
   "dependencies": {
-    "ember": "~2.10.0",
+    "device.js": "devicejs#^0.2.7",
+    "ember": "2.10.2",
     "ember-cli-shims": "0.1.3"
   }
 }
